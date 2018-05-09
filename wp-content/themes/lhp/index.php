@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-Yo!
 		<section id="content" role="main">
 			index
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
