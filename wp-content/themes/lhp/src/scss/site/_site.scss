@@ -1,0 +1,73 @@
+body {
+   margin:0;
+   padding:0;
+   width:100vw;
+   height: 100vh;
+   font-family: 'Crimson Text', serif;
+   overflow: auto;
+   color:#24293D;
+}
+html {
+  margin-top: 0 !important;
+}
+
+#site {
+   position: relative;
+   width:100vw;
+   height:100vh;
+   overflow-x:hidden;
+
+   @include bp-medium {
+   }
+
+
+   @include bp-large {
+   }
+
+
+}
+
+#siteHolder {
+  width:100vw;
+  min-height:100vh;
+  overflow-x:hidden;
+  overflow-y:scroll;
+
+  @include bp-medium {
+  }
+  @include bp-large {
+  }
+
+}
+
+img {
+  width:100%;
+  height:auto;
+}
+
+a:link {
+    color: #24293D;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #24293D;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #3A3F5D;
+    text-decoration: none;
+}
+
+a:active {
+    color: #24293D;
+    text-decoration: none;
+}
+
+.screen-reader-text { /* Reusable, toolbox kind of class */
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+

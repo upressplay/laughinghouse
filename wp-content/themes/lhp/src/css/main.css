@@ -1,0 +1,572 @@
+/**
+ * Import SASS 
+ * Combining files into one, adds them in sequence
+ */
+/**
+ * Global Variables
+ */
+/* Breakpoint Screen Sizes */
+/* Breakpoint Font Root Sizes */
+/* Colors */
+/* Official Social Media Colors */
+/* Fonts */
+/**
+ * Mixins
+ */
+/**
+ * Media Queries
+ */
+/**
+ * hoverTouch.js implementation
+ */
+/**
+ * Convert pixel sizes to REM
+ * @arg  {string}  $pixels  The pixel size to convert to REM
+ * @arg  {string}  $root    The root size to convert by
+ * @return  {string}  the calculated REM size
+ */
+/**
+ * Convert pixel sizes to VW
+ * @arg  {string}  $pixels  The pixel size to convert to REM
+ * @arg  {string}  $width   The width to convert by
+ * @return  {string}  the calculated VW size
+ */
+/**
+ * Custom Scrollbar Styling
+ * @param  {integer} $size       Enter in the increments for size of the scrollbar
+ *                               EX: ".5em"
+ * @param  {string}  $primary    Enter in the color desired for the primary color
+ * @param  {string}  $secondary  Enter in the color desired for the secondary color
+ */
+/**
+ * Imports
+ * Add external files into combined sass file
+ */
+/**
+ * Keyframe Animations
+ */
+@keyframes show {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    z-index: -2; }
+  1% {
+    z-index: 3; }
+  100% {
+    opacity: 1;
+    visibility: visible;
+    z-index: 3; } }
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+    visibility: visible;
+    z-index: 3; }
+  99% {
+    z-index: 3; }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    z-index: -2; } }
+
+@keyframes rotateClockwise {
+  100% {
+    transform: rotate(360deg); } }
+
+/**
+ * Global
+ */
+html, body {
+  font-size: 16px; }
+  @media only screen and (min-width: 320px) {
+    html, body {
+      font-size: 1.33333vw; } }
+  @media only screen and (min-width: 751px) {
+    html, body {
+      font-size: 0.7874vw; } }
+  @media only screen and (min-width: 1271px) {
+    html, body {
+      font-size: 0.625vw; } }
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Crimson Text', serif;
+  overflow: auto;
+  color: #24293D; }
+
+html {
+  margin-top: 0 !important; }
+
+#site {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden; }
+
+#siteHolder {
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll; }
+
+img {
+  width: 100%;
+  height: auto; }
+
+a:link {
+  color: #24293D;
+  text-decoration: none; }
+
+a:visited {
+  color: #24293D;
+  text-decoration: none; }
+
+a:hover {
+  color: #3A3F5D;
+  text-decoration: none; }
+
+a:active {
+  color: #24293D;
+  text-decoration: none; }
+
+.screen-reader-text {
+  /* Reusable, toolbox kind of class */
+  position: absolute;
+  top: -9999px;
+  left: -9999px; }
+
+#navLogo {
+  position: fixed;
+  z-index: 1003;
+  width: 19.5rem;
+  height: 11rem;
+  left: 2.5rem;
+  top: 2.5rem; }
+  @media only screen and (min-width: 751px) {
+    #navLogo {
+      width: 13rem;
+      height: 7rem;
+      left: 1.8rem;
+      top: 1.8rem; } }
+  @media only screen and (min-width: 1271px) {
+    #navLogo {
+      width: 13rem;
+      height: 7rem;
+      left: 1.8rem;
+      top: 1.8rem; } }
+
+#navLogo img {
+  width: 100%;
+  height: auto; }
+
+#navMenuBtn {
+  position: fixed;
+  z-index: 1001;
+  color: #25293d;
+  font-size: 4rem;
+  padding: 4rem;
+  visibility: visible;
+  right: 1.8rem;
+  top: 1.8rem; }
+  @media only screen and (min-width: 751px) {
+    #navMenuBtn {
+      visibility: hidden;
+      font-size: 1.8rem;
+      padding: 0 1rem; } }
+  @media only screen and (min-width: 1271px) {
+    #navMenuBtn {
+      visibility: hidden;
+      font-size: 1.8rem;
+      padding: 0 1rem; } }
+
+#navMenuCloseBtn {
+  position: fixed;
+  z-index: 1003;
+  color: #fff;
+  font-size: 5.5rem;
+  padding: 3rem;
+  visibility: hidden;
+  right: 1.8rem;
+  top: 1.8rem; }
+  @media only screen and (min-width: 751px) {
+    #navMenuCloseBtn {
+      font-size: 1.8rem;
+      padding: 0 1rem; } }
+  @media only screen and (min-width: 1271px) {
+    #navMenuCloseBtn {
+      font-size: 1.8rem;
+      padding: 0 1rem; } }
+
+#navButtons {
+  position: fixed;
+  z-index: 1002;
+  display: none;
+  opacity: 0;
+  background-color: #25293d;
+  right: 0rem;
+  top: 0rem;
+  padding-top: 17rem;
+  width: 100%;
+  height: 100%; }
+  @media only screen and (min-width: 751px) {
+    #navButtons {
+      display: block;
+      opacity: 1;
+      background-color: transparent;
+      right: 1.8rem;
+      top: 1.8rem;
+      padding-top: 0;
+      width: auto;
+      height: auto; } }
+  @media only screen and (min-width: 1271px) {
+    #navButtons {
+      display: block;
+      opacity: 1;
+      background-color: transparent;
+      right: 1.8rem;
+      top: 1.8rem;
+      padding-top: 0;
+      width: auto;
+      height: auto; } }
+
+#navBtnHolder a:link {
+  color: #fff;
+  text-decoration: none; }
+  @media only screen and (min-width: 751px) {
+    #navBtnHolder a:link {
+      color: #24293d; } }
+  @media only screen and (min-width: 1271px) {
+    #navBtnHolder a:link {
+      color: #24293d; } }
+
+#navBtnHolder a:visited {
+  color: #fff;
+  text-decoration: none; }
+  @media only screen and (min-width: 751px) {
+    #navBtnHolder a:visited {
+      color: #24293d; } }
+  @media only screen and (min-width: 1271px) {
+    #navBtnHolder a:visited {
+      color: #24293d; } }
+
+#navBtnHolder a:hover {
+  color: #fff;
+  text-decoration: none; }
+  @media only screen and (min-width: 751px) {
+    #navBtnHolder a:hover {
+      color: #24293d; } }
+  @media only screen and (min-width: 1271px) {
+    #navBtnHolder a:hover {
+      color: #24293d; } }
+
+#navBtnHolder a:active {
+  color: #fff;
+  text-decoration: none; }
+  @media only screen and (min-width: 751px) {
+    #navBtnHolder a:active {
+      color: #24293d; } }
+  @media only screen and (min-width: 1271px) {
+    #navBtnHolder a:active {
+      color: #24293d; } }
+
+#socialBtnHolder {
+  display: inline-block;
+  vertical-align: top;
+  margin: 2rem 0; }
+  @media only screen and (min-width: 751px) {
+    #socialBtnHolder {
+      display: inline-block;
+      margin: 0 0 0 2rem; } }
+  @media only screen and (min-width: 1271px) {
+    #socialBtnHolder {
+      display: inline-block;
+      margin: 0 2rem 0 2rem; } }
+
+#socialBtnHolder a:link {
+  color: #fff;
+  text-decoration: none; }
+  @media only screen and (min-width: 751px) {
+    #socialBtnHolder a:link {
+      color: #383f5c; } }
+  @media only screen and (min-width: 1271px) {
+    #socialBtnHolder a:link {
+      color: #383f5c; } }
+
+#socialBtnHolder a:visited {
+  color: #fff;
+  text-decoration: none; }
+  @media only screen and (min-width: 751px) {
+    #socialBtnHolder a:visited {
+      color: #383f5c; } }
+  @media only screen and (min-width: 1271px) {
+    #socialBtnHolder a:visited {
+      color: #383f5c; } }
+
+#socialBtnHolder a:hover {
+  color: #fff;
+  text-decoration: none; }
+  @media only screen and (min-width: 751px) {
+    #socialBtnHolder a:hover {
+      color: #383f5c; } }
+  @media only screen and (min-width: 1271px) {
+    #socialBtnHolder a:hover {
+      color: #383f5c; } }
+
+#socialBtnHolder a:active {
+  color: #fff;
+  text-decoration: none; }
+  @media only screen and (min-width: 751px) {
+    #socialBtnHolder a:active {
+      color: #383f5c; } }
+  @media only screen and (min-width: 1271px) {
+    #socialBtnHolder a:active {
+      color: #383f5c; } }
+
+.navBtn {
+  display: inline-block;
+  vertical-align: top;
+  color: #fff;
+  font-size: 7rem;
+  letter-spacing: 0.1rem;
+  padding: 0 4rem;
+  width: 100vw; }
+  @media only screen and (min-width: 751px) {
+    .navBtn {
+      color: #24293d;
+      display: inline-block;
+      font-size: 1.8rem;
+      letter-spacing: 0.1rem;
+      padding: 0 1rem;
+      width: auto; } }
+  @media only screen and (min-width: 1271px) {
+    .navBtn {
+      color: #24293d;
+      display: inline-block;
+      font-size: 1.8rem;
+      letter-spacing: 0.1rem;
+      padding: 0 0.8rem;
+      width: auto; } }
+
+.navBtnRoll {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background-color: #24293d; }
+
+.navBtnRollHolder {
+  position: relative;
+  width: 100%;
+  height: 0.3rem; }
+  @media only screen and (min-width: 751px) {
+    .navBtnRollHolder {
+      height: 0.3rem; } }
+  @media only screen and (min-width: 1271px) {
+    .navBtnRollHolder {
+      height: 0.3rem; } }
+
+.navBtnActive {
+  width: 100%;
+  height: 0.3rem;
+  background-color: #24293d; }
+
+.socialBtn {
+  display: inline-block;
+  vertical-align: top;
+  color: #fff;
+  font-size: 7rem;
+  padding: 0 4.5rem; }
+  @media only screen and (min-width: 751px) {
+    .socialBtn {
+      display: inline-block;
+      font-size: 1.8rem;
+      padding: 0 1rem; } }
+  @media only screen and (min-width: 1271px) {
+    .socialBtn {
+      display: inline-block;
+      font-size: 2rem;
+      padding: 0 0.5rem; } }
+
+@keyframes navRest {
+  to {
+    color: #000; } }
+
+@keyframes navRoll {
+  to {
+    color: #333; } }
+
+.img {
+  width: 100%;
+  height: auto; }
+
+#about {
+  display: none;
+  opacity: 0;
+  background-color: #fff;
+  background-image: url(../img/background_square.svg);
+  background-repeat: no-repeat;
+  width: 75rem;
+  min-height: 100vh;
+  background-size: 90rem 90rem;
+  background-position: 0rem -44rem;
+  padding-top: 18rem;
+  border: 0; }
+  @media only screen and (min-width: 751px) {
+    #about {
+      width: 125rem;
+      background-size: 216rem 216rem;
+      background-position: -20rem -190rem;
+      padding-top: 10rem 37.5rem; } }
+  @media only screen and (min-width: 1271px) {
+    #about {
+      width: 85rem;
+      background-size: 216rem 216rem;
+      background-position: -5rem -190rem;
+      padding: 15rem 37.5rem; } }
+
+#aboutHolder {
+  vertical-align: top;
+  text-align: center; }
+
+#aboutLogo {
+  display: none;
+  vertical-align: top;
+  background-image: url(../img/stx_logo.svg);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  width: 50rem;
+  height: 27.5rem;
+  margin-right: 8rem; }
+  @media only screen and (min-width: 751px) {
+    #aboutLogo {
+      display: inline-block;
+      width: 43rem;
+      height: 25rem;
+      margin-right: 6rem; } }
+  @media only screen and (min-width: 1271px) {
+    #aboutLogo {
+      display: inline-block;
+      width: 50rem;
+      height: 25rem;
+      margin-right: 8rem; } }
+
+#aboutDesc {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  color: #25293d;
+  width: 65rem;
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+  margin: 3rem 5rem; }
+  @media only screen and (min-width: 751px) {
+    #aboutDesc {
+      width: 85rem;
+      font-size: 2rem;
+      line-height: 3rem;
+      margin: 0 0 5rem 0; } }
+  @media only screen and (min-width: 1271px) {
+    #aboutDesc {
+      width: 85rem;
+      font-size: 1.8rem;
+      line-height: 3rem;
+      margin: 0 0 5rem 0; } }
+
+#aboutVid {
+  vertical-align: top;
+  width: 75rem;
+  height: 42rem;
+  margin-bottom: 2rem; }
+  @media only screen and (min-width: 751px) {
+    #aboutVid {
+      display: inline-block;
+      width: 85rem;
+      height: 47.8rem;
+      margin-bottom: 5rem; } }
+  @media only screen and (min-width: 1271px) {
+    #aboutVid {
+      display: inline-block;
+      width: 85rem;
+      height: 47.8rem;
+      margin-bottom: 5rem; } }
+
+#headerImg {
+  display: block;
+  width: 19.5rem;
+  height: 11rem;
+  left: 2.5rem;
+  top: 2.5rem; }
+  @media only screen and (min-width: 751px) {
+    #headerImg {
+      width: 13rem;
+      height: 7rem;
+      left: 1.8rem;
+      top: 1.8rem; } }
+  @media only screen and (min-width: 1271px) {
+    #headerImg {
+      width: 160rem;
+      height: 40rem;
+      left: 1.8rem;
+      top: 1.8rem; } }
+
+#footer {
+  font-family: 'Khula', sans-serif;
+  font-weight: 400;
+  width: 100vw;
+  color: #b6b6b6;
+  text-align: center;
+  background-color: #25293d;
+  padding: 2rem 0;
+  font-size: 1.8rem; }
+  @media only screen and (min-width: 751px) {
+    #footer {
+      padding: 2rem 0;
+      font-size: 1.2rem; } }
+  @media only screen and (min-width: 1271px) {
+    #footer {
+      padding: 2rem 0;
+      font-size: 1.2rem; } }
+
+#footer a:link {
+  color: #b6b6b6;
+  text-decoration: none; }
+  @media only screen and (min-width: 751px) {
+    #footer a:link {
+      color: #b6b6b6; } }
+  @media only screen and (min-width: 1271px) {
+    #footer a:link {
+      color: #b6b6b6; } }
+
+#footer a:visited {
+  color: #b6b6b6;
+  text-decoration: none; }
+  @media only screen and (min-width: 751px) {
+    #footer a:visited {
+      color: #b6b6b6; } }
+  @media only screen and (min-width: 1271px) {
+    #footer a:visited {
+      color: #b6b6b6; } }
+
+#footer a:hover {
+  color: #FFF;
+  text-decoration: underline; }
+  @media only screen and (min-width: 751px) {
+    #footer a:hover {
+      color: #FFF; } }
+  @media only screen and (min-width: 1271px) {
+    #footer a:hover {
+      color: #FFF; } }
+
+#footer a:active {
+  color: #b6b6b6;
+  text-decoration: none; }
+  @media only screen and (min-width: 751px) {
+    #footer a:active {
+      color: #b6b6b6; } }
+  @media only screen and (min-width: 1271px) {
+    #footer a:active {
+      color: #b6b6b6; } }

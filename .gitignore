@@ -1,0 +1,4 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control
+wp-content/themes/lhp/node_modules
+wp-content/themes/lhp/build
+.DS_Store

@@ -1,0 +1,74 @@
+#footer {
+  font-family: 'Khula', sans-serif;
+  font-weight: 400;
+  width: 100vw;
+  color:#b6b6b6;
+  text-align: center;
+  background-color: #25293d;
+  padding: rem(20,$text-bp-sm) 0;
+  font-size: rem(18,$text-bp-sm);
+
+  @include bp-medium {
+    padding: rem(20,$text-bp-md) 0;
+    font-size: rem(12,$text-bp-md);
+  }
+
+  @include bp-large {
+    padding: rem(20,$text-bp-lg) 0; 
+    font-size: rem(12,$text-bp-lg);
+  }
+}
+
+#footer a:link {
+    color: #b6b6b6;
+    text-decoration: none;
+
+    @include bp-medium {
+      color: #b6b6b6;
+    }
+
+    @include bp-large {
+      color: #b6b6b6;
+    }
+}
+
+#footer a:visited {
+    color: #b6b6b6;
+    text-decoration: none;
+
+    @include bp-medium {
+      color: #b6b6b6;
+    }
+
+    @include bp-large {
+      color: #b6b6b6;
+    }
+}
+
+#footer a:hover {
+    color: #FFF;
+    text-decoration: underline;
+
+    @include bp-medium {
+      color: #FFF;
+    }
+
+    @include bp-large {
+      color: #FFF;
+    }
+}
+
+#footer a:active {
+    color: #b6b6b6;
+    text-decoration: none;
+
+    @include bp-medium {
+      color: #b6b6b6;
+    }
+
+    @include bp-large {
+      color: #b6b6b6;
+    }
+}
+
+

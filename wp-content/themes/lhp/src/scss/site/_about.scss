@@ -1,0 +1,112 @@
+#about {
+   display: none;
+   opacity: 0;
+   background-color: #fff;
+   background-image: url(../img/background_square.svg);
+   background-repeat: no-repeat;
+
+   width: rem(750,$text-bp-sm);
+   min-height: 100vh;
+   background-size: rem(900,$text-bp-sm) rem(900,$text-bp-sm);
+   background-position: rem(0,$text-bp-sm) rem(-440,$text-bp-sm);
+   padding-top: rem(180,$text-bp-sm);
+
+   @include bp-medium {
+      width: rem(1250,$text-bp-md);
+      background-size: rem(2160,$text-bp-md) rem(2160,$text-bp-md);
+      background-position: rem(-200,$text-bp-md) rem(-1900,$text-bp-md);
+      padding-top: rem(100,$text-bp-md) rem(375,$text-bp-lg);
+   }
+
+   @include bp-large {
+      width: rem(850,$text-bp-lg);
+      background-size: rem(2160,$text-bp-lg) rem(2160,$text-bp-lg);
+      background-position: rem(-50,$text-bp-lg) rem(-1900,$text-bp-lg);
+      padding: rem(150,$text-bp-lg) rem(375,$text-bp-lg);
+   }
+
+   border:0;
+}
+
+#aboutHolder {
+   vertical-align: top;
+   text-align: center;
+}
+
+#aboutLogo {
+   display: none;
+   vertical-align: top;
+   
+
+   background-image: url(../img/stx_logo.svg);
+   background-repeat: no-repeat;
+   background-size: 100% auto;
+
+   width: rem(500,$text-bp-sm);
+   height: rem(275,$text-bp-sm);
+   margin-right: rem(80,$text-bp-sm);
+
+   @include bp-medium {
+      display: inline-block;
+      width: rem(430,$text-bp-md);
+      height:rem(250,$text-bp-md);
+      margin-right: rem(60,$text-bp-md);
+   }
+
+   @include bp-large {
+      display: inline-block;
+      width: rem(500,$text-bp-lg);
+      height:rem(250,$text-bp-lg);
+      margin-right: rem(80,$text-bp-lg);
+   }
+}
+
+#aboutDesc {
+   display: inline-block;
+   vertical-align: top;
+   text-align: left;
+   color: #25293d;
+   
+   width: rem(650,$text-bp-sm);
+   font-size: rem(24,$text-bp-sm);
+   line-height: rem(36,$text-bp-sm);
+   margin: rem(30,$text-bp-sm) rem(50,$text-bp-sm);
+
+   @include bp-medium {
+      width: rem(850,$text-bp-md);
+      font-size: rem(20,$text-bp-md);
+      line-height: rem(30,$text-bp-md);
+      margin: 0 0 rem(50,$text-bp-md) 0;
+   }
+
+   @include bp-large {
+      width: rem(850,$text-bp-lg);
+      font-size: rem(18,$text-bp-lg);
+      line-height: rem(30,$text-bp-lg);
+      margin: 0 0 rem(50,$text-bp-lg) 0;
+   }
+}
+
+#aboutVid {
+   vertical-align: top;
+
+   width: rem(750,$text-bp-sm);
+   height: rem(420,$text-bp-sm);
+   margin-bottom: rem(20,$text-bp-sm);
+
+   @include bp-medium {
+      display: inline-block;
+      width: rem(850,$text-bp-md);
+      height:rem(478,$text-bp-md);
+      margin-bottom: rem(50,$text-bp-md);
+   }
+
+   @include bp-large {
+      display: inline-block;
+      width: rem(850,$text-bp-lg);
+      height:rem(478,$text-bp-lg);
+      margin-bottom: rem(50,$text-bp-lg);
+   }
+}
+
+

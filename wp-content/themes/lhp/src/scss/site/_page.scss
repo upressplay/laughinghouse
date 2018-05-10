@@ -1,0 +1,22 @@
+#headerImg {
+
+    display: block;
+    width:rem(195,$text-bp-sm);
+    height:rem(110,$text-bp-sm);
+    left:rem(25,$text-bp-sm);
+    top:rem(25,$text-bp-sm);
+
+    @include bp-medium {
+        width:rem(130,$text-bp-md);
+        height:rem(70,$text-bp-md);
+        left:rem(18,$text-bp-md);
+        top:rem(18,$text-bp-md);
+    }
+
+    @include bp-large {
+        width:rem(1600,$text-bp-lg);
+        height:rem(400,$text-bp-lg);
+        left:rem(18,$text-bp-lg);
+        top:rem(18,$text-bp-lg);
+    }
+}
