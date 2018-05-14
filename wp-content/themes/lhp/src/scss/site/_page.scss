@@ -1,22 +1,119 @@
 #headerImg {
 
     display: block;
-    width:rem(195,$text-bp-sm);
+    background-position: 50% 50%;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    width:rem(750,$text-bp-sm);
     height:rem(110,$text-bp-sm);
     left:rem(25,$text-bp-sm);
     top:rem(25,$text-bp-sm);
 
     @include bp-medium {
-        width:rem(130,$text-bp-md);
-        height:rem(70,$text-bp-md);
+        width:rem(1600,$text-bp-md);
+        height:rem(600,$text-bp-md);
         left:rem(18,$text-bp-md);
         top:rem(18,$text-bp-md);
     }
 
     @include bp-large {
         width:rem(1600,$text-bp-lg);
-        height:rem(400,$text-bp-lg);
+        height:rem(500,$text-bp-lg);
         left:rem(18,$text-bp-lg);
         top:rem(18,$text-bp-lg);
     }
+}
+
+.pageBody {
+    text-align: center;
+    font-size: rem(70,$text-bp-sm);
+    line-height: rem(30,$text-bp-sm);
+    padding: rem(20,$text-bp-sm);
+
+     @include bp-medium {
+        font-size: rem(18,$text-bp-md);
+        line-height: rem(30,$text-bp-md);
+        padding: rem(20,$text-bp-md);
+      }
+
+    @include bp-large {
+        font-size: rem(21,$text-bp-lg);
+        line-height: rem(30,$text-bp-lg);
+        padding: rem(40,$text-bp-lg);
+    } 
+}
+
+p, h2, h3 {
+    margin: 0 !important;
+}
+
+.pageSecTitle {
+    clear:left;
+    font-family: 'Ultra', serif;
+    color: #fff;
+    background-color: #000;
+    width: 100%;
+    text-align: center;
+
+    font-size: rem(70,$text-bp-sm);
+    padding: rem(20,$text-bp-sm);
+
+     @include bp-medium {
+        font-size: rem(18,$text-bp-md);
+        padding: rem(20,$text-bp-md);
+      }
+
+    @include bp-large {
+        font-size: rem(36,$text-bp-lg);
+        padding: rem(7,$text-bp-lg);
+    }
+}
+
+.pageThumb {
+    float: left;
+    vertical-align: top;
+    width:rem(750,$text-bp-sm);
+
+    @include bp-medium {
+        width:rem(400,$text-bp-md);
+    }
+
+    @include bp-large {
+        width:rem(400,$text-bp-lg);
+    }
+}
+
+.pageThumbImg {
+    width:rem(750,$text-bp-sm);
+
+    @include bp-medium {
+        width:rem(400,$text-bp-md);
+    }
+
+    @include bp-large {
+        width:rem(400,$text-bp-lg);
+    }
+}
+
+.pageThumbTitle {
+    font-family: 'Ultra', serif;
+    color: #fff;
+    background-color: #000;
+    text-align: center;
+
+    font-size: rem(21,$text-bp-sm);
+    line-height: rem(24,$text-bp-sm);
+    padding: rem(10,$text-bp-sm);
+
+     @include bp-medium {
+        font-size: rem(21,$text-bp-md);
+        line-height: rem(24,$text-bp-md);
+        padding: rem(10,$text-bp-md);
+      }
+
+    @include bp-large {
+        font-size: rem(21,$text-bp-lg);
+        line-height: rem(24,$text-bp-lg);
+        padding: rem(10,$text-bp-lg);
+    } 
 }

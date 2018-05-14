@@ -144,9 +144,8 @@ gulp.task('images', function(){ //optimize all image files
 });
 
 gulp.task('watch', function(){ //watch for changes to HTML, CSS, SASS and javascript files and automatically process them
-	gulp.run('browserSync')
-	gulp.watch(['src/scss/**/*.scss','src/css/**/*.css'], ['styles','reload']);
-	gulp.watch(['src/js/**/*.js'], ['scripts','reload']);
+	gulp.watch(['src/scss/**/*.scss','src/css/**/*.css'], ['styles']);
+	gulp.watch(['src/js/**/*.js'], ['scripts']);
 });
 
 gulp.task('fonts', function() { //copy over fonts, since fonts are already optimized we only need to copy them as is

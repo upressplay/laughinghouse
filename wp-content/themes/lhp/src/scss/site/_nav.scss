@@ -4,20 +4,20 @@
     width:rem(195,$text-bp-sm);
     height:rem(110,$text-bp-sm);
     left:rem(25,$text-bp-sm);
-    top:rem(25,$text-bp-sm);
+    top:rem(0,$text-bp-sm);
 
     @include bp-medium {
         width:rem(130,$text-bp-md);
         height:rem(70,$text-bp-md);
-        left:rem(18,$text-bp-md);
-        top:rem(18,$text-bp-md);
+        left:rem(30,$text-bp-md);
+        top:rem(0,$text-bp-md);
     }
 
     @include bp-large {
         width:rem(130,$text-bp-lg);
         height:rem(70,$text-bp-lg);
-        left:rem(18,$text-bp-lg);
-        top:rem(18,$text-bp-lg);
+        left:rem(30,$text-bp-lg);
+        top:rem(0,$text-bp-lg);
     }
 }
 #navLogo img {
@@ -28,7 +28,8 @@
 #navMenuBtn {
   position: fixed;
   z-index: 1001;
-  color:#25293d;
+  color:#FFF;
+  background-color: #000;
   font-size: rem(40,$text-bp-sm);
   padding: rem(40,$text-bp-sm);
   visibility:visible;
@@ -53,6 +54,7 @@
   position: fixed;
   z-index: 1003;
   color:#fff;
+  background-color: #000;
   font-size: rem(55,$text-bp-sm);
   padding: rem(30,$text-bp-sm);
   visibility:hidden;
@@ -72,262 +74,107 @@
 }
 
 #navButtons {
-  position: fixed;
-  z-index: 1002;
 
-  display:none;
-  opacity:0;
+    position: fixed;
+    z-index: 1002;
+    background-color: #000;
+    display:none;
+    opacity:0;
 
-  background-color: #25293d;
+    right:rem(0,$text-bp-sm);
+    top:rem(0,$text-bp-sm);
+    padding-top:rem(170,$text-bp-sm);
 
-  right:rem(0,$text-bp-sm);
-  top:rem(0,$text-bp-sm);
-  padding-top:rem(170,$text-bp-sm);
-
-  width:100%;
-  height:100%;
-
-  @include bp-medium {
-    display:block;
-    opacity:1;
-    background-color: transparent;
-    right:rem(18,$text-bp-md);
-    top:rem(18,$text-bp-md);
-    padding-top:0;
-    width:auto;
-    height:auto;
-  }
-
-  @include bp-large {
-    display:block;
-    opacity:1;
-    background-color: transparent;
-    right:rem(18,$text-bp-lg);
-    top:rem(18,$text-bp-lg);
-    padding-top:0;
-    width:auto;
-    height:auto;
-  }
-}
-
-
-
-
-
-#navBtnHolder a:link {
-    color: #fff;
-    text-decoration: none;
+    width:100%;
+    height:100%;
 
     @include bp-medium {
-      color: #24293d;
+        display:block;
+        opacity:1;
+        right:rem(18,$text-bp-md);
+        top:rem(18,$text-bp-md);
+        padding-top:0;
+        width:auto;
+        height:auto;
     }
 
     @include bp-large {
-      color: #24293d;
+        display:block;
+        opacity:1;
+        right:rem(0,$text-bp-lg);
+        top:rem(25,$text-bp-lg);
+        padding-top:0;
+        width:auto;
+        height:auto;
     }
 }
 
-#navBtnHolder a:visited {
-    color: #fff;
-    text-decoration: none;
-
-    @include bp-medium {
-      color: #24293d;
-    }
-
-    @include bp-large {
-      color: #24293d;
-    }
-}
-
-#navBtnHolder a:hover {
-    color: #fff;
-    text-decoration: none;
-
-    @include bp-medium {
-      color: #24293d;
-    }
-
-    @include bp-large {
-      color: #24293d;
-    }
-}
-
-#navBtnHolder a:active {
-    color: #fff;
-    text-decoration: none;
-
-    @include bp-medium {
-      color: #24293d;
-    }
-
-    @include bp-large {
-      color: #24293d;
-    }
+#navBtnHolder {
+    display: inline-block;
+    vertical-align: top;
 }
 
 #socialBtnHolder {
     display: inline-block;
     vertical-align: top;
-    margin: rem(20,$text-bp-sm) 0;
-    @include bp-medium {
-      display: inline-block;
-      margin: 0 0 0 rem(20,$text-bp-md);
-    }
-
-    @include bp-large {
-      display: inline-block;
-      margin: 0 rem(20,$text-bp-lg) 0 rem(20,$text-bp-lg);
-    }
 }
 
-#socialBtnHolder a:link {
-    color: #fff;
-    text-decoration: none;
-
-    @include bp-medium {
-      color: #383f5c;
-    }
-
-    @include bp-large {
-      color: #383f5c;
-    }
-}
-
-#socialBtnHolder a:visited {
-    color: #fff;
-    text-decoration: none;
-
-    @include bp-medium {
-      color: #383f5c;
-    }
-
-    @include bp-large {
-      color: #383f5c;
-    }
-}
-
-#socialBtnHolder a:hover {
-    color: #fff;
-    text-decoration: none;
-
-    @include bp-medium {
-      color: #383f5c;
-    }
-
-    @include bp-large {
-      color: #383f5c;
-    }
-}
-
-#socialBtnHolder a:active {
-    color: #fff;
-    text-decoration: none;
-    
-    @include bp-medium {
-      color: #383f5c;
-    }
-
-    @include bp-large {
-      color: #383f5c;
-    }
-}
 .navBtn {
-	display: inline-block;
-  vertical-align: top;
-  color: #fff;
-
-  font-size: rem(70,$text-bp-sm);
-  letter-spacing: rem(1,$text-bp-sm);
-  padding: 0 rem(40,$text-bp-sm);
-  width:100vw;
-
-  @include bp-medium {
-    color: #24293d;
     display: inline-block;
-    font-size: rem(18,$text-bp-md);
-    letter-spacing: rem(1,$text-bp-md);
-    padding: 0 rem(10,$text-bp-md);
-    width:auto;
-  }
+    vertical-align: middle;
+    font-family: 'Ultra', serif;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #000;
+    font-size: rem(70,$text-bp-sm);
+    letter-spacing: rem(1,$text-bp-sm);
+    padding: rem(20,$text-bp-sm);
+    width:100vw;
 
-  @include bp-large {
-    color: #24293d;
-    display: inline-block;
-    font-size: rem(18,$text-bp-lg);
-    letter-spacing: rem(1,$text-bp-lg);
-    padding: 0 rem(8,$text-bp-lg);
-    width:auto;
-  }
+     @include bp-medium {
+        display: inline-block;
+        font-size: rem(18,$text-bp-md);
+        letter-spacing: rem(1,$text-bp-md);
+        padding: rem(20,$text-bp-md);
+        width:auto;
+      }
+
+    @include bp-large {
+        display: inline-block;
+        font-size: rem(24,$text-bp-lg);
+        letter-spacing: rem(1,$text-bp-lg);
+        padding: rem(20,$text-bp-lg);
+        width:auto;
+    }
 }
 
-
-.navBtnRoll {
-  position: absolute;
-  bottom:0;
-  left:0;
-    width: 100%;
-    height: 0%;
-    background-color: #24293d;
-}
-
-.navBtnRollHolder {
-  position: relative;
-  width: 100%;
-  height:rem(3,$text-bp-sm);
-
-  @include bp-medium {
-    height:rem(3,$text-bp-md);
-  }
-
-  @include bp-large {
-    height:rem(3,$text-bp-lg);
-  }  
-}
-
-
-
-.navBtnActive {
-  width: 100%;
-  height:rem(3,$text-bp-lg);
-  background-color: #24293d;
+.navBtn:hover, .socialBtn:hover {
+    color: #000;
+    background-color: #fff;
+    text-decoration: none;
 }
 
 
 .socialBtn {
-  display: inline-block;
-  vertical-align: top;
-  color: #fff;
-
-  font-size: rem(70,$text-bp-sm);
-  padding: 0 rem(45,$text-bp-sm);
-
-  @include bp-medium {
     display: inline-block;
-    font-size: rem(18,$text-bp-md);
-    padding: 0 rem(10,$text-bp-md);
-  }
+    vertical-align: middle;
+    color: #fff;
+    background-color: #000;
+    font-size: rem(70,$text-bp-sm);
+    padding: 0 rem(45,$text-bp-sm);
 
-  @include bp-large {
-    display: inline-block;
-    font-size: rem(20,$text-bp-lg);
-    padding: 0 rem(5,$text-bp-lg);
-  }
+    @include bp-medium {
+        font-size: rem(18,$text-bp-md);
+        padding: 0 rem(10,$text-bp-md);
+    }
+
+    @include bp-large {
+        font-size: rem(27,$text-bp-lg);
+        padding: rem(20,$text-bp-lg) rem(10,$text-bp-lg);
+    }
 }
 
 
-@keyframes navRest {
-    to {color:#000;}
-}
-
-@keyframes navRoll {
-    to {color:#333;}
-}
-
-.img {
-	width:100%;
-	height:auto;
-}
 
 
 
