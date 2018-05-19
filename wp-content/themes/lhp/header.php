@@ -8,6 +8,7 @@ $cdn = "/";
 	$meta_url = "http://" . $_SERVER[HTTP_HOST] . $_SERVER['REQUEST_URI'];
 	$meta_img_default = $site_url . '/images/f7_avatar.jpg';
 	$meta_img = $meta_img_default;
+	global $segments;
 	$segments = explode('/', trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/')); 
 	$template_uri = get_template_directory_uri();
 	?>
