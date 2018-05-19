@@ -43,9 +43,7 @@
     } 
 }
 
-p, h2, h3 {
-    margin: 0 !important;
-}
+
 
 .pageSecTitle {
     clear:left;
@@ -64,14 +62,15 @@ p, h2, h3 {
       }
 
     @include bp-large {
-        font-size: rem(36,$text-bp-lg);
-        padding: rem(7,$text-bp-lg);
+        font-size: rem(48,$text-bp-lg);
+        padding: rem(10,$text-bp-lg);
     }
 }
 
 .pageThumb {
-    float: left;
+    display: inline-block;
     vertical-align: top;
+
     width:rem(750,$text-bp-sm);
 
     @include bp-medium {
@@ -84,6 +83,8 @@ p, h2, h3 {
 }
 
 .pageThumbImg {
+
+    overflow: hidden;
     width:rem(750,$text-bp-sm);
 
     @include bp-medium {
@@ -92,6 +93,7 @@ p, h2, h3 {
 
     @include bp-large {
         width:rem(400,$text-bp-lg);
+        height:rem(200,$text-bp-lg);
     }
 }
 

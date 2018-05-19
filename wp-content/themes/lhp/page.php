@@ -6,67 +6,43 @@
 		<div class="pageBody">
 			<?php the_content(); ?>
 		</div>
+		<?php $output = ""; ?>
 		<?php if( have_rows('page_gallery') ): ?>
-			<h2 class="pageSecTitle">
-				PRODUCTIONS
-			</h2>
+			<?php $output  .=  '<h2 class="pageSecTitle"> PRODUCTIONS </h2>'; ?>
 		    <?php while( have_rows('page_gallery') ): the_row(); ?>
 		       <?php
+		       		
 					$post_object = get_sub_field('page_object');
-					if( $post_object ): 
+					if( $post_object ) {
 						$post = $post_object;
 						setup_postdata( $post ); 
-						?>
-						<a href="<?php the_permalink(); ?>"><div class="pageThumb"><div class="pageThumbImg"><img src="<?php the_post_thumbnail_url('thumb'); ?>"/></div><h3 class="pageThumbTitle"><?php the_title(); ?></h3></div></a>
-					    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-					<?php endif; ?>
+						$link = get_permalink();
+						$title = get_the_title();
+						$img = get_the_post_thumbnail_url( $post_id, 'thumb' );
+						$output  .=  '<a href="'. $link .'"><div class="pageThumb"><div class="pageThumbImg"><img src="'. $img .'"/></div><h3 class="pageThumbTitle">'. $title .'</h3></div></a>';
+						wp_reset_postdata();
+					} 
+				?>
 		    <?php endwhile; ?>
 		<?php endif; ?>
 		<?php if( have_rows('news_gallery') ): ?>
-			<h2 class="pageSecTitle">
-				NEWS
-			</h2>
+			<?php $output  .=  '<h2 class="pageSecTitle"> NEWS </h2>'; ?>
 		    <?php while( have_rows('news_gallery') ): the_row(); ?>
 		       <?php
-					$post_object = get_sub_field('page_object');
-					if( $post_object ): 
+					$post_object = get_sub_field('news_object');
+					if( $post_object ) {
 						$post = $post_object;
 						setup_postdata( $post ); 
-						?>
-						<a href="<?php the_permalink(); ?>">
-					    <div class="pageThumb">
-					    	<div class="pageThumbImg">
-					    	 	<img src="<?php the_post_thumbnail_url('thumb'); ?>"/>
-					    	</div>
-					    	<h3 class="pageThumbTitle"><?php the_title(); ?></h3>
-					    </div>
-					    </a>
-					    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-					<?php endif; ?>
+						$link = get_permalink();
+						$title = get_the_title();
+						$img = get_the_post_thumbnail_url( $post_id, 'thumb' );
+						$output  .= '<a href="'. $link .'"><div class="pageThumb"><div class="pageThumbImg"><img src="'. $img .'"/></div><h3 class="pageThumbTitle">'. $title .'</h3></div></a>';
+						wp_reset_postdata();
+					} 
+				?>
 		    <?php endwhile; ?>
 		<?php endif; ?>
-		<?php if( have_rows('sevices_gallery') ): ?>
-			<h2 class="pageSecTitle">
-				SERVICES
-			</h2>
-		    <?php while( have_rows('sevices_gallery') ): the_row(); ?>
-		       <?php
-					$post_object = get_sub_field('page_object');
-					if( $post_object ): 
-						$post = $post_object;
-						setup_postdata( $post ); 
-						?>
-						<a href="<?php the_permalink(); ?>">
-					    <div class="pageThumb">
-					    	<div class="pageThumbImg">
-					    	 	<img src="<?php the_post_thumbnail_url('thumb'); ?>"/>
-					    	</div>
-					    	<h3 class="pageThumbTitle"><?php the_title(); ?></h3>
-					    </div>
-					    </a>
-					    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-					<?php endif; ?>
-		    <?php endwhile; ?>
-		<?php endif; ?>
+		<?php echo $output; ?>
+
 <?php endwhile; endif; ?>
 <?php get_footer(); ?>

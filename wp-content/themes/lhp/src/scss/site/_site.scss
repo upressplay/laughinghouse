@@ -28,16 +28,15 @@ html {
 }
 
 #siteHolder {
-  width:100vw;
-  min-height:100vh;
-  overflow-x:hidden;
-  overflow-y:scroll;
+    width:100vw;
+    min-height:100vh;
+    overflow-x:hidden;
+    overflow-y:scroll;
 
-  @include bp-medium {
-  }
-  @include bp-large {
-  }
-
+    @include bp-medium {
+    }
+    @include bp-large {
+    }
 }
 
 img {
@@ -45,6 +44,21 @@ img {
   height:auto;
 }
 
+h1, h2, h3 {
+    margin: 0 !important;
+}
+
+p {
+    margin:rem(10,$text-bp-sm) 0;
+
+    @include bp-medium {
+        margin:rem(10,$text-bp-md) 0;
+    }
+
+    @include bp-large {
+        margin:rem(20,$text-bp-lg) 0;
+    }
+}
 a:link {
     color: #24293D;
     text-decoration: none;
