@@ -1,0 +1,71 @@
+.videos {
+	cursor: pointer;
+}
+
+#videoOverlay {
+	position: fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-color: #000;
+	z-index: 1005;
+	overflow-x: hidden;
+	overflow-y: auto; 
+	opacity: 0;	
+}
+
+#videoOverlayClose {
+	cursor: pointer;
+	color: #fff;
+	font-family: 'Khula', sans-serif;
+	font-weight: 800;
+	top: rem(30,$text-bp-sm);
+	right: rem(30,$text-bp-sm);
+	font-size: rem(80,$text-bp-sm);
+	position: absolute;
+
+	@include bp-medium {
+		top: rem(30,$text-bp-md);
+		right: rem(30,$text-bp-md);
+		font-size: rem(50,$text-bp-md);
+	}
+
+	@include bp-large {
+		
+		top: rem(30,$text-bp-lg);
+		right: rem(30,$text-bp-lg);
+		font-size: rem(50,$text-bp-lg);
+	}
+}
+
+#videoPlayerHolder {
+	width: 100vw;
+	height: 100vh;	
+}
+
+#videoPlayer {
+	position: absolute;
+
+	vertical-align: middle;
+	text-align: center;
+
+	width: rem(700,$text-bp-sm);
+	height: rem(393.75,$text-bp-sm);
+	top: 50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	
+
+	@include bp-medium {
+		width: rem(1000,$text-bp-md);
+		height: rem(562.5,$text-bp-md);
+	}
+
+	@include bp-large {
+		width: rem(1000,$text-bp-lg);
+		height: rem(562.5,$text-bp-lg);
+
+	}
+
+}

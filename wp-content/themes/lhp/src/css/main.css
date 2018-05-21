@@ -581,6 +581,63 @@ a:active {
       line-height: 2.8rem;
       padding: 2rem; } }
 
+.videos {
+  cursor: pointer; }
+
+#videoOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 1005;
+  overflow-x: hidden;
+  overflow-y: auto;
+  opacity: 0; }
+
+#videoOverlayClose {
+  cursor: pointer;
+  color: #fff;
+  font-family: 'Khula', sans-serif;
+  font-weight: 800;
+  top: 3rem;
+  right: 3rem;
+  font-size: 8rem;
+  position: absolute; }
+  @media only screen and (min-width: 751px) {
+    #videoOverlayClose {
+      top: 3rem;
+      right: 3rem;
+      font-size: 5rem; } }
+  @media only screen and (min-width: 1271px) {
+    #videoOverlayClose {
+      top: 3rem;
+      right: 3rem;
+      font-size: 5rem; } }
+
+#videoPlayerHolder {
+  width: 100vw;
+  height: 100vh; }
+
+#videoPlayer {
+  position: absolute;
+  vertical-align: middle;
+  text-align: center;
+  width: 70rem;
+  height: 39.375rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  @media only screen and (min-width: 751px) {
+    #videoPlayer {
+      width: 100rem;
+      height: 56.25rem; } }
+  @media only screen and (min-width: 1271px) {
+    #videoPlayer {
+      width: 100rem;
+      height: 56.25rem; } }
+
 #footer {
   font-family: 'Khula', sans-serif;
   font-weight: 400;
