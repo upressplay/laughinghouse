@@ -23,7 +23,7 @@
     function render() {
 
     	
-        trace.push(id+" render utils.getBreakPoint = "+utils.getBreakPoint());
+        trace.log(id+" render utils.getBreakPoint = "+utils.getBreakPoint());
 
         dom.nav = $('#nav');
         dom.navLogo = $('#navLogo');
@@ -39,21 +39,7 @@
 
         if(breakPoint == "bp-large") {
 
-            dom.navBtn.mouseover(function(event) {
-                TweenMax.to($(this).find('.navBtnRoll'), 0.25, {height:"100%", ease:"Power1.easeInOut", overwrite:2});
-            });
 
-            dom.navBtn.mouseout(function(event) {
-                TweenMax.to($(this).find('.navBtnRoll'), 0.25, {height:"0%", ease:"Power1.easeInOut", overwrite:2});
-            }); 
-
-            dom.socialBtn.mouseover(function(event) {
-                TweenMax.to($(this).find('.navBtnRoll'), 0.25, {height:"100%", ease:"Power1.easeInOut", overwrite:2});
-            });  
-
-            dom.socialBtn.mouseout(function(event) {
-                TweenMax.to($(this).find('.navBtnRoll'), 0.25, {height:"0%", ease:"Power1.easeInOut", overwrite:2});
-            }); 
 
         }
 

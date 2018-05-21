@@ -22,6 +22,8 @@ $cdn = "/";
 		<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/build/css/main.min.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.1/TweenMax.min.js"></script>
+
+		<script src="<?php echo get_template_directory_uri(); ?>/build/js/main.min.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Domine:400,700" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Ultra" rel="stylesheet">
 		<?php wp_head(); ?>

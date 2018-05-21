@@ -8,21 +8,12 @@
 	utils = site.utils;
 
 	function init() {
-		data = grid_data;
-		// render();
-		$( ".videos" ).each(function( index ) {
-			var entry = $(this);
-			var id = entry.attr('id');
-			$("#"+id).click(function(event) {
-				var vid_id = entry.attr('vidId');
-				var win = window.open("https://www.youtube.com/watch?v="+vid_id, '_blank');
-				win.focus();
-			});
-		});
+		
+		render();
 	}
 
 	function render() {
-		trace.push(id+" render");
+		trace.log(id+" render");
 		dom.videos = $( ".videos" );
 		dom.videos.each(function( index ) {
 			var entry = $(this);

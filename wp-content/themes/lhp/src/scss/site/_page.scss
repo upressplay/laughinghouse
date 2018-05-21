@@ -1,45 +1,32 @@
 #headerImg {
-
     display: block;
-    background-position: 50% 50%;
-    background-size: 100% auto;
-    background-repeat: no-repeat;
     width:rem(750,$text-bp-sm);
-    height:rem(110,$text-bp-sm);
-    left:rem(25,$text-bp-sm);
-    top:rem(25,$text-bp-sm);
 
     @include bp-medium {
         width:rem(1600,$text-bp-md);
-        height:rem(600,$text-bp-md);
-        left:rem(18,$text-bp-md);
-        top:rem(18,$text-bp-md);
     }
 
     @include bp-large {
         width:rem(1600,$text-bp-lg);
-        height:rem(500,$text-bp-lg);
-        left:rem(18,$text-bp-lg);
-        top:rem(18,$text-bp-lg);
     }
 }
 
 .pageBody {
     text-align: center;
-    font-size: rem(70,$text-bp-sm);
+    font-size: rem(21,$text-bp-sm);
     line-height: rem(30,$text-bp-sm);
-    padding: rem(20,$text-bp-sm);
+    padding: rem(30,$text-bp-sm);
 
      @include bp-medium {
-        font-size: rem(18,$text-bp-md);
+        font-size: rem(21,$text-bp-md);
         line-height: rem(30,$text-bp-md);
-        padding: rem(20,$text-bp-md);
+        padding: rem(30,$text-bp-md);
       }
 
     @include bp-large {
         font-size: rem(21,$text-bp-lg);
         line-height: rem(30,$text-bp-lg);
-        padding: rem(40,$text-bp-lg);
+        padding: rem(30,$text-bp-lg);
     } 
 }
 
@@ -50,31 +37,41 @@
     font-family: 'Ultra', serif;
     color: #fff;
     background-color: #000;
-    width: 100%;
     text-align: center;
 
-    font-size: rem(70,$text-bp-sm);
+    font-size: rem(60,$text-bp-sm);
     padding: rem(20,$text-bp-sm);
 
      @include bp-medium {
-        font-size: rem(18,$text-bp-md);
+        font-size: rem(48,$text-bp-md);
         padding: rem(20,$text-bp-md);
       }
 
     @include bp-large {
         font-size: rem(48,$text-bp-lg);
         padding: rem(10,$text-bp-lg);
+        letter-spacing: rem(2,$text-bp-lg);
     }
 }
 
-.pageThumb {
+.pageRow {
+    text-align: center;
+    background-color: #000;
+}
+.galleryImg {
+    display: inline-block;
+    vertical-align: top;    
+    cursor: pointer;
+}
+
+.pageThumbInfo {
     display: inline-block;
     vertical-align: top;
 
     width:rem(750,$text-bp-sm);
 
     @include bp-medium {
-        width:rem(400,$text-bp-md);
+        width:rem(317.5,$text-bp-md);
     }
 
     @include bp-large {
@@ -82,13 +79,49 @@
     }
 }
 
-.pageThumbImg {
+.pageThumbVert {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
 
-    overflow: hidden;
     width:rem(750,$text-bp-sm);
 
     @include bp-medium {
-        width:rem(400,$text-bp-md);
+        width:rem(317.5,$text-bp-md);
+    }
+
+    @include bp-large {
+        width:rem(400,$text-bp-lg);
+    }
+}
+
+.pageThumbHorz, {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+
+    width:rem(750,$text-bp-sm);
+
+    @include bp-medium {
+        text-align: left;
+        width:rem(317.5,$text-bp-md);
+    }
+
+    @include bp-large {
+        text-align: left;
+        width:rem(800,$text-bp-lg);
+    }
+}
+
+.pageThumbRect {
+    display: inline-block;
+    overflow: hidden;
+    width:rem(750,$text-bp-sm);
+    height:rem(375,$text-bp-sm);
+
+    @include bp-medium {
+        width:rem(317.5,$text-bp-md);
+        height:rem(158.75,$text-bp-md);
     }
 
     @include bp-large {
@@ -97,25 +130,97 @@
     }
 }
 
+.pageThumbSq {
+    display: inline-block;
+    overflow: hidden;
+    width:rem(750,$text-bp-sm);
+    height:rem(375,$text-bp-sm);
+
+    @include bp-medium {
+        width:rem(317.5,$text-bp-md);
+        height:rem(317.5,$text-bp-md);
+    }
+
+    @include bp-large {
+        width:rem(400,$text-bp-lg);
+        height:rem(400,$text-bp-lg);
+    }
+}
+
+.pageThumbTall {
+    display: inline-block;
+    overflow: hidden;
+    width:rem(750,$text-bp-sm);
+    height:rem(1125,$text-bp-sm);
+
+    @include bp-medium {
+        width:rem(317.5,$text-bp-md);
+        height:rem(476.25,$text-bp-md);
+    }
+
+    @include bp-large {
+        width:rem(400,$text-bp-lg);
+        height:rem(600,$text-bp-lg);
+    }
+}
+
 .pageThumbTitle {
     font-family: 'Ultra', serif;
     color: #fff;
     background-color: #000;
-    text-align: center;
 
-    font-size: rem(21,$text-bp-sm);
-    line-height: rem(24,$text-bp-sm);
-    padding: rem(10,$text-bp-sm);
+    font-size: rem(30,$text-bp-sm);
+    line-height: rem(48,$text-bp-sm);
+    padding: rem(20,$text-bp-sm);
 
      @include bp-medium {
         font-size: rem(21,$text-bp-md);
         line-height: rem(24,$text-bp-md);
-        padding: rem(10,$text-bp-md);
+        padding: rem(20,$text-bp-md);
       }
 
     @include bp-large {
         font-size: rem(21,$text-bp-lg);
         line-height: rem(24,$text-bp-lg);
-        padding: rem(10,$text-bp-lg);
+        padding: rem(20,$text-bp-lg);
     } 
+}
+.pageThumbDate {
+    color: #fff;
+    font-family: 'Domine', serif;
+    font-size: rem(30,$text-bp-sm);
+    line-height: rem(48,$text-bp-sm);
+    padding-top: rem(10,$text-bp-sm);
+
+     @include bp-medium {
+        font-size: rem(21,$text-bp-md);
+        line-height: rem(24,$text-bp-md);
+        padding-top: rem(10,$text-bp-md);
+      }
+
+    @include bp-large {
+        font-size: rem(16,$text-bp-lg);
+        line-height: rem(28,$text-bp-lg);
+        padding-top: rem(10,$text-bp-lg);
+    }    
+}
+.pageThumbBody {
+    color: #fff;
+    background-color: #000;
+
+    font-size: rem(30,$text-bp-sm);
+    line-height: rem(48,$text-bp-sm);
+    padding: rem(20,$text-bp-sm);
+
+     @include bp-medium {
+        font-size: rem(21,$text-bp-md);
+        line-height: rem(24,$text-bp-md);
+        padding: rem(20,$text-bp-md);
+      }
+
+    @include bp-large {
+        font-size: rem(16,$text-bp-lg);
+        line-height: rem(28,$text-bp-lg);
+        padding: rem(20,$text-bp-lg);
+    }
 }

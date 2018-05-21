@@ -83,7 +83,7 @@
 
     right:rem(0,$text-bp-sm);
     top:rem(0,$text-bp-sm);
-    padding-top:rem(170,$text-bp-sm);
+    padding-top:rem(240,$text-bp-sm);
 
     width:100%;
     height:100%;
@@ -117,6 +117,14 @@
 #socialBtnHolder {
     display: inline-block;
     vertical-align: top;
+    padding-top:rem(40,$text-bp-sm);
+    @include bp-medium {
+        padding-top:0;
+    }
+
+    @include bp-large {
+        padding-top:0;
+    }
 }
 
 .navBtn {
@@ -133,7 +141,7 @@
 
      @include bp-medium {
         display: inline-block;
-        font-size: rem(18,$text-bp-md);
+        font-size: rem(24,$text-bp-md);
         letter-spacing: rem(1,$text-bp-md);
         padding: rem(20,$text-bp-md);
         width:auto;
@@ -161,11 +169,11 @@
     color: #fff;
     background-color: #000;
     font-size: rem(70,$text-bp-sm);
-    padding: 0 rem(45,$text-bp-sm);
+    padding: 0 rem(25,$text-bp-sm);
 
     @include bp-medium {
-        font-size: rem(18,$text-bp-md);
-        padding: 0 rem(10,$text-bp-md);
+        font-size: rem(27,$text-bp-md);
+        padding: rem(20,$text-bp-md) rem(10,$text-bp-md);
     }
 
     @include bp-large {
