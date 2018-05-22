@@ -61,12 +61,19 @@
 							$date = get_the_date('M d, Y', $post->ID);	
 							$body = get_the_content($post->ID);
 							$summary = get_the_excerpt($post->ID);	
+							$cat = get_the_category($post->ID);
+							$cat = $cat[0]->slug;
+
+							$vidid = get_field('youtube_vidid');
+							$playlist = get_field('youtube_playlist');
 
 							$img = get_the_post_thumbnail_url( $post->ID, $thumb_size );
 
-							$output  .= '<a href="'. $link .'">';
+							if($cat !="videos" && $cat != "gallery") {
+								$output  .= '<a href="'. $link .'">';	
+							}
 
-							$output  .= '<div id="'.$post->ID.'" class="pageThumb'.$thumb_layout .'">';
+							$output  .= '<div id="'.$post->ID.'" class="pageThumb'.$thumb_layout .' '.$cat .'" data-vidid="'.$vidid.'" data-playlist="'.$playlist.'">';
 							if($show_img) {
 								$output  .= '<div class="'.$thumb_size.'"><img src="'. $img .'"/></div>';	
 							}
@@ -86,7 +93,10 @@
 							if($show_summary) {
 								$output  .= '<div class="pageThumbBody">'. $summary .'</div>';	
 							}
-							$output  .= '</div></div></a>';
+							$output  .= '</div></div>';
+							if($cat !="videos" && $cat != "gallery") {
+								$output  .= '</a>';	
+							}
 							wp_reset_postdata();	
 						}
 					}

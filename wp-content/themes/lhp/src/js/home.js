@@ -19,29 +19,41 @@
 			var entry = $(this);
 			var id = entry.attr('id');
 			$("#"+id).click(function(event) {
-				var vid_id = entry.attr('vidId');
-				openVideo(vid_id);
+				var vidid = entry.attr('data-vidid');
+				var playlist = entry.attr('data-playlist');
+				openVideo(vidid,playlist);
+			});
+		});
+
+		dom.gallery = $( ".gallery" );
+		dom.gallery.each(function( index ) {
+			var entry = $(this);
+			var id = entry.attr('id');
+			$("#"+id).click(function(event) {
+				var vidid = entry.attr('data-vidid');
+				var playlist = entry.attr('data-playlist');
+				openGallery(vidid,playlist);
 			});
 		});
 
 		var segment1 = utils.getSegments(1);
 		trace.push("segment1 = "+segment1);
 		if(segment1 === ""){
-			TweenMax.delayedCall( 1, openVideo, [undefined,"PLoQzwOjEjuqiOEuUaxGZPpCF0BtVvP4y3"], site.home );
+			TweenMax.delayedCall( 1, openVideo, [undefined,"UUNARSoer9Ix86pMwP1EpTLQ"], site.home );
 		}
 		
 
 	}
-	function openVideo(vid_id, playlist) {
-		trace.push("openVideo vid_id = "+vid_id+" playlist = "+playlist);   
+	function openVideo(vidid, playlist) {
+		trace.push("openVideo vidId = "+vidid+" playlist = "+playlist);   
 		
 		$('#site').append('<div id="videoOverlay"></div>');
 		dom.videoOverlay = $( "#videoOverlay" );
 
 		dom.videoOverlay.append('<div id="videoOverlayClose">X</div>');
 
-		var youtubeUrl = "https://www.youtube.com/embed/"+vid_id+"?&autoplay=1";
-		if(playlist !== undefined) youtubeUrl = "https://www.youtube.com/embed/videoseries?list="+playlist+"&autoplay=1";
+		var youtubeUrl = "https://www.youtube.com/embed/"+vidid+"?&autoplay=1";
+		if(playlist !== undefined && playlist !== "") youtubeUrl = "https://www.youtube.com/embed/videoseries?list="+playlist+"&autoplay=1";
 
 		dom.videoOverlay.append('<div id="videoPlayerHolder"><div id="videoPlayer"><iframe width="100%" height="100%" src="'+youtubeUrl+'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div></div>');
 

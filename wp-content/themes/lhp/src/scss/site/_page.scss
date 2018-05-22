@@ -182,7 +182,7 @@
     @include bp-large {
         font-size: rem(21,$text-bp-lg);
         line-height: rem(24,$text-bp-lg);
-        padding: rem(20,$text-bp-lg);
+        padding: rem(10,$text-bp-lg) rem(20,$text-bp-lg);
     } 
 }
 .pageThumbDate {
@@ -213,8 +213,8 @@
     padding: rem(20,$text-bp-sm);
 
      @include bp-medium {
-        font-size: rem(21,$text-bp-md);
-        line-height: rem(24,$text-bp-md);
+        font-size: rem(16,$text-bp-md);
+        line-height: rem(28,$text-bp-md);
         padding: rem(20,$text-bp-md);
       }
 
