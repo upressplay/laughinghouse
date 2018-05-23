@@ -2,9 +2,9 @@ body {
    margin:0;
    padding:0;
    width:100vw;
-   height: 100vh;
+   height:100vh;
    font-family: 'Domine', serif;
-   overflow: auto;
+   overflow-x:hidden;
    color:#24293D;
 }
 html {
@@ -15,7 +15,6 @@ html {
    position: relative;
    width:100vw;
    height:100vh;
-   overflow-x:hidden;
 
    @include bp-medium {
    }
@@ -30,8 +29,7 @@ html {
 #siteHolder {
     width:100vw;
     min-height:100vh;
-    overflow-x:hidden;
-    overflow-y:scroll;
+    overflow-y:auto;
 
     @include bp-medium {
     }

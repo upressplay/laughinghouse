@@ -100,6 +100,7 @@
 							wp_reset_postdata();	
 						}
 					}
+					$output  .=  '</div>'; 
 				}
 			}
 
