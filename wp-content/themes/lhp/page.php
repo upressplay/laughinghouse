@@ -6,7 +6,7 @@
 			the_post(); 
 
 			$output = ""; 
-			$output  .=  '<div id="headerImg">'; 
+			$output  .=  '<div class="headerImg">'; 
 			if ( has_post_thumbnail() ) {
 				$output  .=  '<img src="'.  get_the_post_thumbnail_url() .'"/>'; 
 			}
@@ -92,25 +92,27 @@
 								$output  .= '<div class="pageThumbBody">'. $summary .'</div>';	
 							}
 							$output  .= '</div><!-- pageThumbInfo --></div><!-- pageThumb -->';
-
+							$output  .= '</a>';	
+							
 							$output  .= '<div id="'.$post->ID.'" class="postContent" data-hires="'.$img.'" data-vidid="'.$vidid.'" data-playlist="'.$playlist.'" data-cat="'.$cat.'">';
 							if($cat != "videos") {
-								$output  .= '<div id="headerImg">'; 
+								$output  .= '<div class="headerImg">'; 
 								$output  .= '</div>';
 								$output  .= '<div class="pageBody">'. $body .'</div>';
 							} else {
 
 							}
-							$output  .= '<div class="postClose">X</div>';
+							$output  .= '<div data-id="'.$post->ID.'" class="postClose">X</div>';
 							$output  .= '</div><!-- postContent -->';
-							$output  .= '</a>';	
+
 							wp_reset_postdata();	
 						}
 					}
 					$output  .=  '</div>'; 
+
 				}
 			}
-
+			$output  .= '<div id="postOverlay"></div><!-- postOverlay -->';
 			$cats = get_categories();
 
 			foreach ( $cats as $cat ) {
@@ -149,5 +151,6 @@
 		}
 	}
 	echo $output;
+
 	get_footer();
 ?>

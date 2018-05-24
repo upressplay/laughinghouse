@@ -74,7 +74,7 @@
     
 
     function divDisplay(id,display,obj) {
-        trace.push("divDisplay id = "+id+" display = "+display+" obj "+obj)
+        trace.log("divDisplay id = "+id+" display = "+display+" obj "+obj)
         if(id != undefined) obj = $(id);
         obj.css({
             "display":display

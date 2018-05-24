@@ -304,14 +304,14 @@ a:active {
       font-size: 2.7rem;
       padding: 2rem 1rem; } }
 
-#headerImg {
+.headerImg {
   display: block;
   width: 75rem; }
   @media only screen and (min-width: 751px) {
-    #headerImg {
+    .headerImg {
       width: 160rem; } }
   @media only screen and (min-width: 1271px) {
-    #headerImg {
+    .headerImg {
       width: 160rem; } }
 
 .pageBody {
@@ -488,8 +488,21 @@ a:active {
       line-height: 2.8rem;
       padding: 2rem; } }
 
-.postContent {
+#postOverlay {
   background-color: #000;
+  display: none;
+  opacity: 0;
+  position: fixed;
+  z-index: 1009;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto; }
+
+.postContent {
+  background-color: #333;
   display: none;
   opacity: 0;
   position: fixed;
@@ -497,7 +510,9 @@ a:active {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh; }
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto; }
 
 .postClose {
   cursor: pointer;
@@ -554,11 +569,11 @@ a:active {
       right: 3rem;
       font-size: 5rem; } }
 
-#videoPlayerHolder {
+.videoPlayerHolder {
   width: 100vw;
   height: 100vh; }
 
-#videoPlayer {
+.videoPlayer {
   position: absolute;
   vertical-align: middle;
   text-align: center;
@@ -568,11 +583,11 @@ a:active {
   left: 50%;
   transform: translate(-50%, -50%); }
   @media only screen and (min-width: 751px) {
-    #videoPlayer {
+    .videoPlayer {
       width: 100rem;
       height: 56.25rem; } }
   @media only screen and (min-width: 1271px) {
-    #videoPlayer {
+    .videoPlayer {
       width: 100rem;
       height: 56.25rem; } }
 

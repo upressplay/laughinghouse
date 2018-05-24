@@ -1,7 +1,7 @@
 ;(function(obj, undefined){
 	"use strict";
 
-	var id = "videos",
+	var id = "posts",
 	data = [],
 	dom = {},
 	trace = site.utilities.trace,
@@ -9,7 +9,8 @@
 	current = 0,
 	next = 0,
 	currentPost = {},
-	nextPost = {};
+	nextPost = {},
+	overlayOpen = false;
 
 	function init() {
 		
@@ -18,7 +19,27 @@
 
 	function render() {
 		trace.log(id+" render");
+		dom.videos = $( ".videos" );
+		dom.videos.each(function( index ) {
+			var entry = $(this);
+			addPost(entry);
+		});
 
+		dom.gallery = $( ".gallery" );
+		dom.gallery.each(function( index ) {
+			var entry = $(this);
+			addPost(entry)
+		});
+
+
+		dom.postContent = $( ".postContent" );
+		dom.postContent.on('swipeleft', function(e){
+			site.posts.gotoNext('next');
+		}).on('swiperight', function(e){
+			site.posts.gotoNext('prev');
+		});
+
+		dom.postOverlay = $( "#postOverlay" );
 		
 	}
 
@@ -45,8 +66,7 @@
 		dom.postClose.click(function(event) {
 			var entry = $(this);
 			var id = entry.attr('data-postid');
-			trace.log('click closePost');
-			closePost(id);
+			closeOverlay(id);
 		});
 
 	}
@@ -68,6 +88,8 @@
 		var vidid = post.attr('data-vidid');
 		var playlist = post.attr('data-playlist');
 
+		if(!overlayOpen) openOverlay();
+
 		if(cat == "videos") {
 
 			var youtubeUrl = "https://www.youtube.com/embed/"+vidid+"?&autoplay=1";
@@ -85,7 +107,7 @@
         var new_content = new Image();  
         new_content.id = id;
         new_content.onload = function () {   
-            site.videos.openPost(this.id);
+            site.posts.openPost(this.id);
 
         }; 
         post.find('.headerImg').append('<img src="'+img+'">');
@@ -96,18 +118,32 @@
 
 
 	}
-	function openPost(id) {
 
-		trace.log('openPost id = '+id);
+	function openOverlay() {
+		overlayOpen = true;
+		trace.log('openOverlay');
+		TweenMax.to(dom.postOverlay, 0.5, {opacity:1, onStart:utils.divDisplay, onStartParams:[undefined,'block',dom.postOverlay],ease:"Power1.easeIn", overwrite:2});	
+	}
+
+	function closeOverlay() {
+		overlayOpen = false;
+		trace.log('closeOverlay');
+		TweenMax.to(dom.postOverlay, 0.5, {opacity:0, onComplete:utils.divDisplay, onCompleteParams:[undefined,'none',dom.postOverlay], ease:"Power1.easeIn", overwrite:2});
+		closePost();	
+	}
+
+	function openPost() {
+
+		trace.log('openPost');
 		nextPost.css({"display":"table"});
 		TweenMax.to(nextPost, 0.5, {opacity:1, ease:"Power1.easeIn", overwrite:2});	
 		currentPost = nextPost;
 	}
 
-	function closePost(id) {
-		trace.log("closePost"); 
+	function closePost() {
+		trace.log("closePost "+currentPost); 
 
-		TweenMax.to(currentPost, 0.5, {opacity:0, onComplete:site.videos.hidePost, ease:"Power1.easeIn", overwrite:2}); 
+		TweenMax.to(currentPost, 0.5, {opacity:0, onComplete:site.posts.hidePost, ease:"Power1.easeIn", overwrite:2}); 
 
 	}
 
@@ -118,61 +154,6 @@
 
 	}
 
-	function removeVideo() {
-		trace.push("removeVideo"); 
-
-		dom.videoOverlay.remove();  
-	}
-
-	function buildVidPlayer() {
-
-	}
-	function openVideo(id) {
-		var vidid;
-		var playlist;
-
-		for (var i = 0; i < data.length; i++) { 
-    		if(id == data[i].id) {
-    			current = i;
-				vidid = data[i].vidid;
-				playlist = data[i].playlist;
-			}
-		}
-
-		trace.push("openVideo vidId = "+vidid+" playlist = "+playlist);   
-		
-		$('#site').append('<div id="videoOverlay"></div>');
-		dom.videoOverlay = $( "#videoOverlay" );
-
-		dom.videoOverlay.append('<div id="videoOverlayClose">X</div>');
-
-		var youtubeUrl = "https://www.youtube.com/embed/"+vidid+"?&autoplay=1";
-		if(playlist !== undefined && playlist !== "") youtubeUrl = "https://www.youtube.com/embed/videoseries?list="+playlist+"&autoplay=1";
-
-		dom.videoOverlay.append('<div id="videoPlayerHolder"><div id="videoPlayer"><iframe width="100%" height="100%" src="'+youtubeUrl+'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div></div>');
-
-		dom.closeBtn = $( "#videoOverlayClose" );
-		dom.closeBtn.click(function(event) {
-			closeVideo();
-		});
-
-		TweenMax.to(dom.videoOverlay, 0.5, {opacity:1, ease:"Power1.easeIn", overwrite:2});
-
-		
-
-	}
-
-	function closeVideo() {
-		trace.push("closeVideo"); 
-
-		TweenMax.to(dom.videoOverlay, 0.5, {opacity:0, onComplete:removeVideo, ease:"Power1.easeIn", overwrite:2});    
-	}
-
-	function removeVideo() {
-		trace.push("removeVideo"); 
-
-		dom.videoOverlay.remove();  
-	}
 
 	function gotoNext(direction){
 		trace.log("gotoNext direction = "+direction);
@@ -186,15 +167,15 @@
 
 		closePost();
 
-		TweenMax.delayedCall( 0.5, site.videos.openVideo, [data[next].id]); 
+		TweenMax.delayedCall( 0.5, site.posts.loadPost, [data[next].id]); 
 
 	}
 
 	// Public API definitions
-	site.videos = {
+	site.posts = {
 		data:[],
-		openVideo: openVideo,
 		gotoNext:gotoNext,
+		loadPost:loadPost,
 		openPost:openPost,
 		hidePost:hidePost
 	};
