@@ -49,7 +49,7 @@
 
     @include bp-large {
         font-size: rem(48,$text-bp-lg);
-        padding: rem(10,$text-bp-lg);
+        padding: rem(20,$text-bp-lg);
         letter-spacing: rem(2,$text-bp-lg);
     }
 }

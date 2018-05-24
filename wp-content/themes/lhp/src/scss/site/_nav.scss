@@ -2,20 +2,20 @@
     position: fixed;
     z-index: 1003;
     width:rem(195,$text-bp-sm);
-    height:rem(110,$text-bp-sm);
+    height:rem(195,$text-bp-sm);
     left:rem(25,$text-bp-sm);
     top:rem(0,$text-bp-sm);
 
     @include bp-medium {
         width:rem(130,$text-bp-md);
-        height:rem(70,$text-bp-md);
+        height:rem(130,$text-bp-md);
         left:rem(30,$text-bp-md);
         top:rem(0,$text-bp-md);
     }
 
     @include bp-large {
         width:rem(130,$text-bp-lg);
-        height:rem(70,$text-bp-lg);
+        height:rem(130,$text-bp-lg);
         left:rem(30,$text-bp-lg);
         top:rem(0,$text-bp-lg);
     }

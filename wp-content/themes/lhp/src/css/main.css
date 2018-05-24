@@ -152,19 +152,19 @@ a:active {
   position: fixed;
   z-index: 1003;
   width: 19.5rem;
-  height: 11rem;
+  height: 19.5rem;
   left: 2.5rem;
   top: 0rem; }
   @media only screen and (min-width: 751px) {
     #navLogo {
       width: 13rem;
-      height: 7rem;
+      height: 13rem;
       left: 3rem;
       top: 0rem; } }
   @media only screen and (min-width: 1271px) {
     #navLogo {
       width: 13rem;
-      height: 7rem;
+      height: 13rem;
       left: 3rem;
       top: 0rem; } }
 
@@ -345,7 +345,7 @@ a:active {
   @media only screen and (min-width: 1271px) {
     .pageSecTitle {
       font-size: 4.8rem;
-      padding: 1rem;
+      padding: 2rem;
       letter-spacing: 0.2rem; } }
 
 .pageRow {
