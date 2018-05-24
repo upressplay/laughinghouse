@@ -204,7 +204,7 @@
         padding-top: rem(10,$text-bp-lg);
     }    
 }
-.pageThumbBody {
+.pageThumbBody, .postBody {
     color: #fff;
     background-color: #000;
 
@@ -222,5 +222,41 @@
         font-size: rem(16,$text-bp-lg);
         line-height: rem(28,$text-bp-lg);
         padding: rem(20,$text-bp-lg);
+    }
+}
+
+.postContent {
+    background-color: #000;
+    display: none;
+    opacity: 0;
+    position: fixed;
+    z-index: 1010;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+}
+
+.postClose {
+    cursor: pointer;
+    color: #fff;
+    font-family: 'Khula', sans-serif;
+    font-weight: 800;
+    top: rem(30,$text-bp-sm);
+    right: rem(30,$text-bp-sm);
+    font-size: rem(80,$text-bp-sm);
+    position: absolute;
+
+    @include bp-medium {
+        top: rem(30,$text-bp-md);
+        right: rem(30,$text-bp-md);
+        font-size: rem(50,$text-bp-md);
+    }
+
+    @include bp-large {
+        
+        top: rem(30,$text-bp-lg);
+        right: rem(30,$text-bp-lg);
+        font-size: rem(50,$text-bp-lg);
     }
 }

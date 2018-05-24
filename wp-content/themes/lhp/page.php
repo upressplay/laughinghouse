@@ -67,15 +67,13 @@
 							$vidid = get_field('youtube_vidid');
 							$playlist = get_field('youtube_playlist');
 
-							$img = get_the_post_thumbnail_url( $post->ID, $thumb_size );
+							$thumb = get_the_post_thumbnail_url( $post->ID, $thumb_size );
+							$img = get_the_post_thumbnail_url( $post->ID );
 
-							if($cat !="videos" && $cat != "gallery") {
-								$output  .= '<a href="'. $link .'">';	
-							}
-
-							$output  .= '<div id="'.$post->ID.'" class="pageThumb'.$thumb_layout .' '.$cat .'" data-vidid="'.$vidid.'" data-playlist="'.$playlist.'">';
+							$output  .= '<a href="'. $link .'" data-postid="'.$post->ID.'" class="'.$cat .' post" >';
+							$output  .= '<div class="pageThumb'.$thumb_layout .'" >';
 							if($show_img) {
-								$output  .= '<div class="'.$thumb_size.'"><img src="'. $img .'"/></div>';	
+								$output  .= '<div class="'.$thumb_size.'"><img src="'. $thumb .'" alt="'.$title.'"/></div>';	
 							}
 							$output  .= '<div class="pageThumbInfo">';	
 							if($show_title) {
@@ -85,7 +83,7 @@
 								$output  .= '<div class="pageThumbDate">'. $date .'</div>';	
 							}
 							if($show_title) {
-								$output  .= '</h3>';	
+								$output  .= '</h3><!-- pageThumbTitle -->';	
 							}
 							if($show_body) {
 								$output  .= '<div class="pageThumbBody">'. $body .'</div>';	
@@ -93,10 +91,19 @@
 							if($show_summary) {
 								$output  .= '<div class="pageThumbBody">'. $summary .'</div>';	
 							}
-							$output  .= '</div></div>';
-							if($cat !="videos" && $cat != "gallery") {
-								$output  .= '</a>';	
+							$output  .= '</div><!-- pageThumbInfo --></div><!-- pageThumb -->';
+
+							$output  .= '<div id="'.$post->ID.'" class="postContent" data-hires="'.$img.'" data-vidid="'.$vidid.'" data-playlist="'.$playlist.'" data-cat="'.$cat.'">';
+							if($cat != "videos") {
+								$output  .= '<div id="headerImg">'; 
+								$output  .= '</div>';
+								$output  .= '<div class="pageBody">'. $body .'</div>';
+							} else {
+
 							}
+							$output  .= '<div class="postClose">X</div>';
+							$output  .= '</div><!-- postContent -->';
+							$output  .= '</a>';	
 							wp_reset_postdata();	
 						}
 					}
@@ -131,8 +138,8 @@
 							$thumb_type = "thumb_sq";
 							$thumb_class = "pageThumbImgSq";
 						}
-						$img = get_the_post_thumbnail_url( $post_id, $thumb_type );
-						$output  .= '<a href="'. $link .'"><div class="pageThumbVert"><div class="'.$thumb_class.'"><img src="'. $img .'"/></div><h3 class="pageThumbTitle">'. $title .'</h3></div></a>';	
+						$thumb = get_the_post_thumbnail_url( $post_id, $thumb_type );
+						$output  .= '<a href="'. $link .'"><div class="pageThumbVert"><div class="'.$thumb_class.'"><img src="'. $thumb .'"/></div><h3 class="pageThumbTitle">'. $title .'</h3></div></a>';	
 
 					}
 					$output  .=  '</div>'; 

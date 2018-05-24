@@ -20,8 +20,8 @@
 			var entry = $(this);
 			var id = entry.attr('id');
 			$("#"+id).click(function(event) {
-				var vidid = entry.attr('data-vidid');
-				var playlist = entry.attr('data-playlist');
+				var vidid = entry.attr('data-hires');
+				var playlist = entry.attr('data-desc');
 				openGallery(vidid,playlist);
 			});
 		});
@@ -72,7 +72,7 @@
 	function gotoNext(direction){
 		trace.log("gotoNext direction = "+direction);
 		data.forEach(function( element ) {
-			trace.log(element)
+			trace.log(element);
 		});
 	}
 
