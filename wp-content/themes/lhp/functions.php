@@ -1,6 +1,6 @@
 <?php
 
-add_image_size( 'header', 1600, 500, array( 'center', 'center' ) );
+add_image_size( 'header', 1600, 600, array( 'top', 'center' ) );
 add_image_size( 'pageThumbRect', 400, 200, array( 'center', 'center' ) );
 add_image_size( 'pageThumbSq', 400, 400, array( 'center', 'center' ) );
 add_image_size( 'pageThumbSqSm', 200, 200, array( 'center', 'center' ) );

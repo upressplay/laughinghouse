@@ -10,7 +10,7 @@
 			$output = ""; 
 			$output  .=  '<div class="headerImg">'; 
 			if ( has_post_thumbnail() ) {
-				$output  .=  '<img src="'.  get_the_post_thumbnail_url() .'" alt="'.get_the_title().'"/>'; 
+				$output  .=  '<img src="'.  get_the_post_thumbnail_url($post->ID, "header") .'" alt="'.get_the_title().'"/>'; 
 			}
 			$output  .=  '</div>'; 
 			if(!is_front_page()){
@@ -68,15 +68,12 @@
 		       		if($section_title != "") {
 
 						if($section_link != "") {
-							$output  .=  '<div class="pageSecTitleLink">'; 
+							$output  .=  '<h2 class="pageSecTitle">';
 							$output  .=  '<a href="'.$section_link.'">'; 	
-							$output  .=  '<h2> '.$section_title.' </h2>';
-							$output  .=  '</a>'; 
-							$output  .=  '</div>'; 
+							$output  .=  $section_title.' ';
+							$output  .=  '</a></h2>'; 
 						} else {
-							$output  .=  '<div class="pageSecTitle">'; 
-							$output  .=  '<h2> '.$section_title.' </h2>';
-							$output  .=  '</div>'; 
+							$output  .=  '<h2 class="pageSecTitle"> '.$section_title.' </h2>';
 						}
 						
 			       	}
@@ -88,6 +85,7 @@
 		       		$show_date = false;
 		       		$show_body = false;
 		       		$show_summary = false;
+		       		$show_link = false;
 
 		       		foreach( $thumb_style['thumb_elements'] as $el ) {
 		       			if($el == "img") $show_img = true;
@@ -95,6 +93,7 @@
 		       			if($el == "date") $show_date = true;
 		       			if($el == "body") $show_body = true;
 		       			if($el == "summary") $show_summary = true;
+		       			if($el == "link") $show_link = true;
 		       		}
 
 		       		$thumb_layout = $thumb_style['thumb_layout']; 
@@ -154,6 +153,10 @@
 		       				$thumb_size = 'pageThumbSq';
 		       				$thumb_layout = "Horz";	
 		       			}
+		       			if($cat_name == "Services") {
+		       				$show_date = false;
+		       			}
+
 						include( locate_template( 'post.php', false, false ) ); 	
 
 					}

@@ -95,7 +95,7 @@ body {
   height: 100vh;
   font-family: 'Domine', serif;
   overflow-x: hidden;
-  color: #24293D;
+  color: #fff;
   background-color: #000; }
 
 html {
@@ -117,7 +117,8 @@ img {
   height: auto; }
 
 h1, h2, h3 {
-  margin: 0 !important; }
+  margin: 0 !important;
+  font-weight: normal; }
 
 p {
   margin: 1rem 0; }
@@ -153,22 +154,25 @@ a:active {
 #navLogo {
   position: fixed;
   z-index: 1003;
-  width: 19.5rem;
-  height: 19.5rem;
-  left: 2.5rem;
-  top: 0rem; }
+  width: 15rem;
+  height: 15rem;
+  left: 2rem;
+  top: 0rem;
+  border: 0.2rem solid #000; }
   @media only screen and (min-width: 751px) {
     #navLogo {
       width: 13rem;
       height: 13rem;
       left: 3rem;
-      top: 0rem; } }
+      top: 0rem;
+      border: 0.2rem solid #000; } }
   @media only screen and (min-width: 1271px) {
     #navLogo {
       width: 13rem;
       height: 13rem;
       left: 3rem;
-      top: 0rem; } }
+      top: -0.2rem;
+      border: 0.2rem solid #000; } }
 
 #navLogo img {
   width: 100%;
@@ -315,7 +319,7 @@ a:active {
   width: 75rem; }
   @media only screen and (min-width: 751px) {
     .headerImg {
-      width: 160rem; } }
+      width: 127rem; } }
   @media only screen and (min-width: 1271px) {
     .headerImg {
       width: 160rem; } }
@@ -330,12 +334,20 @@ a:active {
 .pageInfo {
   display: table-cell;
   vertical-align: middle;
-  text-align: center; }
+  text-align: center;
+  background-color: #000; }
 
-@media only screen and (min-width: 1271px) {
-  .pagePoster {
-    width: 15rem;
-    margin: 3rem 3rem 1rem 3rem; } }
+.pagePoster {
+  width: 20rem;
+  margin: 3rem 3rem 1rem 3rem; }
+  @media only screen and (min-width: 751px) {
+    .pagePoster {
+      width: 15rem;
+      margin: 3rem 3rem 1rem 3rem; } }
+  @media only screen and (min-width: 1271px) {
+    .pagePoster {
+      width: 15rem;
+      margin: 3rem 5rem 1rem 5rem; } }
 
 .pageLinks {
   margin: 0.5rem 1rem; }
@@ -349,29 +361,33 @@ a:active {
 .pageLinks a {
   display: inline-block;
   font-family: 'Ultra', serif;
-  background-color: #000;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   text-align: center;
-  font-size: 2.1rem;
-  line-height: 3rem;
-  padding: 3rem;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  padding: 1rem;
+  margin: 0.5rem 1rem;
+  width: 18rem;
   transition: all 0.3s; }
   @media only screen and (min-width: 751px) {
     .pageLinks a {
-      font-size: 2.1rem;
-      line-height: 3rem;
-      padding: 3rem; } }
-  @media only screen and (min-width: 1271px) {
-    .pageLinks a {
       font-size: 1.4rem;
       line-height: 1.8rem;
-      padding: 1rem;
+      padding: 1.5rem;
+      margin: 0.5rem 1rem;
+      width: 13rem; } }
+  @media only screen and (min-width: 1271px) {
+    .pageLinks a {
+      font-size: 1.7rem;
+      line-height: 2.1rem;
+      padding: 1.5rem;
       margin: 0.5rem 1rem;
       width: 13rem; } }
 
 .pageLinks a:hover {
-  background-color: #fff;
-  color: #000; }
+  background-color: #000;
+  color: #fff; }
 
 .pageBody, .pageInfoBody {
   color: #000;
@@ -386,8 +402,8 @@ a:active {
       padding: 3rem; } }
   @media only screen and (min-width: 1271px) {
     .pageBody, .pageInfoBody {
-      font-size: 1.9rem;
-      line-height: 3rem;
+      font-size: 2.8rem;
+      line-height: 4rem;
       padding: 5rem; } }
 
 .pageBody {
@@ -401,41 +417,36 @@ a:active {
   vertical-align: middle;
   text-align: center; }
 
-.pageSecTitle, .pageSecTitleLink {
+.pageSecTitle {
   font-family: 'Ultra', serif;
   text-align: center;
+  color: #fff;
+  background-color: #000;
+  text-transform: uppercase;
   width: 100%;
   font-size: 6rem;
   padding: 2rem;
   letter-spacing: 0.2rem; }
   @media only screen and (min-width: 751px) {
-    .pageSecTitle, .pageSecTitleLink {
+    .pageSecTitle {
       font-size: 3.8rem;
       padding: 1.6rem;
       letter-spacing: 0.2rem; } }
   @media only screen and (min-width: 1271px) {
-    .pageSecTitle, .pageSecTitleLink {
+    .pageSecTitle {
       font-size: 4.8rem;
       padding: 2rem;
       letter-spacing: 0.2rem; } }
 
-.pageSecTitle {
+.pageSecTitle a {
+  display: block;
   color: #fff;
-  background-color: #000; }
-
-.pageSecTitleLink {
   background-color: #000;
   transition: all 0.3s; }
 
-.pageSecTitleLink:hover {
+.pageSecTitle a:hover {
+  color: #000;
   background-color: #fff; }
-
-.pageSecTitleLink a {
-  color: #fff;
-  transition: all 0.3s; }
-
-.pageSecTitleLink a:hover {
-  color: #000; }
 
 .pageRow {
   text-align: center;

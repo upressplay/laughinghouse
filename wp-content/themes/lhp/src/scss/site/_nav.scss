@@ -1,23 +1,26 @@
 #navLogo {
     position: fixed;
     z-index: 1003;
-    width:rem(195,$text-bp-sm);
-    height:rem(195,$text-bp-sm);
-    left:rem(25,$text-bp-sm);
+    width:rem(150,$text-bp-sm);
+    height:rem(150,$text-bp-sm);
+    left:rem(20,$text-bp-sm);
     top:rem(0,$text-bp-sm);
+    border:rem(2,$text-bp-sm) solid #000;
 
     @include bp-medium {
         width:rem(130,$text-bp-md);
         height:rem(130,$text-bp-md);
         left:rem(30,$text-bp-md);
         top:rem(0,$text-bp-md);
+        border:rem(2,$text-bp-md) solid #000;
     }
 
     @include bp-large {
         width:rem(130,$text-bp-lg);
         height:rem(130,$text-bp-lg);
         left:rem(30,$text-bp-lg);
-        top:rem(0,$text-bp-lg);
+        top:rem(-2,$text-bp-lg);
+        border:rem(2,$text-bp-lg) solid #000;
     }
 }
 #navLogo img {

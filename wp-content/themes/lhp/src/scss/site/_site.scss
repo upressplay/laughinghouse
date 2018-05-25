@@ -5,7 +5,7 @@ body {
    height:100vh;
    font-family: 'Domine', serif;
    overflow-x:hidden;
-   color:#24293D;
+   color:#fff;
    background-color: #000;
 }
 html {
@@ -46,6 +46,7 @@ img {
 
 h1, h2, h3 {
     margin: 0 !important;
+    font-weight: normal;
 }
 
 p {

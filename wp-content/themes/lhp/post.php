@@ -13,7 +13,10 @@
 							$thumb = get_the_post_thumbnail_url( $post->ID, $thumb_size );
 							$img = get_the_post_thumbnail_url( $post->ID );
 
-							$output  .= '<a href="'. $link .'" data-postid="'.$post->ID.'" class="'.$cat .' post" >';
+							if($show_link) {
+								$output  .= '<a href="'. $link .'" data-postid="'.$post->ID.'" class="'.$cat .' post" >';	
+							}
+							
 							$output  .= '<div class="pageThumb'.$thumb_layout .'" >';
 							if($show_img) {
 								$output  .= '<div class="'.$thumb_size.'"><img src="'. $thumb .'" alt="'.$title.'"/></div>';	
@@ -39,7 +42,9 @@
 							}
 							
 							$output  .= '</div><!-- pageThumb -->';
-							$output  .= '</a>';	
+							if($show_link) {
+								$output  .= '</a>';	
+							}
 							
 							$output  .= '<div id="'.$post->ID.'" class="postContent" data-hires="'.$img.'" data-vidid="'.$vidid.'" data-playlist="'.$playlist.'" data-cat="'.$cat.'">';
 							if($cat != "videos" && $cat != "gallery") {
