@@ -24,10 +24,10 @@
 
 	function addPost(entry) {
 
-		trace.log("addPost entry = "+entry)
+		trace.log("addPost entry = "+entry);
 
 		var id = entry.attr('data-postid');
-		trace.log("addPost id = "+id)
+		trace.log("addPost id = "+id);
 		data.push({"id":id});
 
 		entry.click(function(event) {
@@ -118,11 +118,6 @@
 
 	}
 
-	function removeVideo() {
-		trace.push("removeVideo"); 
-
-		dom.videoOverlay.remove();  
-	}
 
 	function buildVidPlayer() {
 

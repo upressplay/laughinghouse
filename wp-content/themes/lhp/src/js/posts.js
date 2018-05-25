@@ -28,7 +28,13 @@
 		dom.gallery = $( ".gallery" );
 		dom.gallery.each(function( index ) {
 			var entry = $(this);
-			addPost(entry)
+			addPost(entry);
+		});
+
+		dom.news = $( ".news" );
+		dom.news.each(function( index ) {
+			var entry = $(this);
+			addPost(entry);
 		});
 
 
@@ -39,16 +45,37 @@
 			site.posts.gotoNext('prev');
 		});
 
+		dom.share = $( ".share" );
+		dom.share.each(function( index ) {
+			var entry = $(this);
+			var type = entry.attr('data-type');
+			trace.log('share type = '+type);
+			entry.click(function(event) {
+				var entry = $(this);
+		  		
+
+				var url = entry.attr('data-url');
+				var title = entry.attr('data-title');
+				var desc = entry.attr('data-desc');
+				var type = entry.attr('data-type');
+				var options = {"url":url,"title":title,"desc":desc, "type":type};
+
+				trace.log('share options = '+options);
+				site.share.url(options);
+				
+			});
+		});
+
 		dom.postOverlay = $( "#postOverlay" );
 		
 	}
 
 	function addPost(entry) {
 
-		trace.log("addPost entry = "+entry)
+		trace.log("addPost entry = "+entry);
 
 		var id = entry.attr('data-postid');
-		trace.log("addPost id = "+id)
+		trace.log("addPost id = "+id);
 		data.push({"id":id});
 
 		entry.click(function(event) {
@@ -67,6 +94,16 @@
 			var entry = $(this);
 			var id = entry.attr('data-postid');
 			closeOverlay(id);
+		});
+
+		dom.rightArrow = $('#'+id).find( ".rightArrow" );
+		dom.rightArrow.click(function(event) {
+			gotoNext('next');
+		});
+
+		dom.leftArrow = $('#'+id).find( ".leftArrow" );
+		dom.leftArrow.click(function(event) {
+			gotoNext('back');
 		});
 
 	}
@@ -95,7 +132,7 @@
 			var youtubeUrl = "https://www.youtube.com/embed/"+vidid+"?&autoplay=1";
 			if(playlist !== undefined && playlist !== "") youtubeUrl = "https://www.youtube.com/embed/videoseries?list="+playlist+"&autoplay=1";
 
-			post.append('<div class="videoPlayerHolder"><div class="videoPlayer"><iframe width="100%" height="100%" src="'+youtubeUrl+'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div></div>');
+			post.prepend('<div class="videoPlayerHolder"><div class="videoPlayer"><iframe width="100%" height="100%" src="'+youtubeUrl+'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div></div>');
 
 			openPost(id);
 			return;
@@ -110,7 +147,9 @@
             site.posts.openPost(this.id);
 
         }; 
-        post.find('.headerImg').append('<img src="'+img+'">');
+        var imgClass = "headerImg";
+        if(cat == "gallery") imgClass = "postImg";
+        post.prepend('<div class="'+imgClass+'"><img src="'+img+'"></div>');
 
         new_content.src = img;
 
@@ -122,7 +161,7 @@
 	function openOverlay() {
 		overlayOpen = true;
 		trace.log('openOverlay');
-		TweenMax.to(dom.postOverlay, 0.5, {opacity:1, onStart:utils.divDisplay, onStartParams:[undefined,'block',dom.postOverlay],ease:"Power1.easeIn", overwrite:2});	
+		TweenMax.to(dom.postOverlay, 0.5, {opacity:1, onStart:utils.divDisplay, onStartParams:[undefined,'block',dom.postOverlay], ease:"Power1.easeIn", overwrite:2});	
 	}
 
 	function closeOverlay() {
@@ -135,21 +174,20 @@
 	function openPost() {
 
 		trace.log('openPost');
-		nextPost.css({"display":"table"});
-		TweenMax.to(nextPost, 0.5, {opacity:1, ease:"Power1.easeIn", overwrite:2});	
+		TweenMax.to(nextPost, 0.5, {opacity:1, onStart:utils.divDisplay, onStartParams:[undefined,'block',nextPost],ease:"Power1.easeIn", overwrite:2});	
 		currentPost = nextPost;
 	}
 
 	function closePost() {
 		trace.log("closePost "+currentPost); 
-
-		TweenMax.to(currentPost, 0.5, {opacity:0, onComplete:site.posts.hidePost, ease:"Power1.easeIn", overwrite:2}); 
-
+		TweenMax.to(currentPost, 0.5, {opacity:0, onComplete:site.posts.hidePost, ease:"Power1.easeIn", overwrite:2});
 	}
 
 	function hidePost() {
 		trace.log("hidePost"); 
 		currentPost.find('.videoPlayerHolder').remove();
+		currentPost.find('.headerImg').remove();
+		currentPost.find('.postImg').remove();
 		currentPost.css({"display":"none"}); 
 
 	}

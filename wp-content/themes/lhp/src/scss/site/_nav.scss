@@ -117,12 +117,17 @@
 #socialBtnHolder {
     display: inline-block;
     vertical-align: top;
+    text-align: center;
+    
+    width:100%;
     padding-top:rem(40,$text-bp-sm);
     @include bp-medium {
+        width:auto;
         padding-top:0;
     }
 
     @include bp-large {
+        width:auto;
         padding-top:0;
     }
 }
@@ -130,17 +135,18 @@
 .navBtn {
     display: inline-block;
     vertical-align: middle;
+    text-align: center;
     font-family: 'Ultra', serif;
     text-transform: uppercase;
     color: #fff;
     background-color: #000;
+
     font-size: rem(70,$text-bp-sm);
     letter-spacing: rem(1,$text-bp-sm);
-    padding: rem(20,$text-bp-sm);
+    padding: rem(20,$text-bp-sm) 0;
     width:100vw;
 
      @include bp-medium {
-        display: inline-block;
         font-size: rem(24,$text-bp-md);
         letter-spacing: rem(1,$text-bp-md);
         padding: rem(20,$text-bp-md);
@@ -148,7 +154,6 @@
       }
 
     @include bp-large {
-        display: inline-block;
         font-size: rem(24,$text-bp-lg);
         letter-spacing: rem(1,$text-bp-lg);
         padding: rem(20,$text-bp-lg);
@@ -164,6 +169,7 @@
 
 
 .socialBtn {
+    cursor: pointer;
     display: inline-block;
     vertical-align: middle;
     color: #fff;

@@ -11,20 +11,98 @@
     }
 }
 
-.pageBody {
+.pageHeader {
+    background-color: #fff;
+    color: #000;
+    text-align: left;
+
+     @include bp-medium {
+        
+      }
+
+    @include bp-large {
+        
+    }
+}
+
+.pageInfo {
+    display: inline-block;
+
+    @include bp-large {
+        width: rem(100,$text-bp-lg);
+    }
+}
+
+.pagePoster {
+
+    @include bp-medium {
+
+    }
+
+    @include bp-large {
+        width: rem(100,$text-bp-lg);
+    } 
+
+}
+
+.pageLink {
+    background-color: #000;
+    color: #fff;
     text-align: center;
     font-size: rem(21,$text-bp-sm);
     line-height: rem(30,$text-bp-sm);
     padding: rem(30,$text-bp-sm);
 
-     @include bp-medium {
+    @include bp-medium {
         font-size: rem(21,$text-bp-md);
         line-height: rem(30,$text-bp-md);
         padding: rem(30,$text-bp-md);
-      }
+    }
 
     @include bp-large {
-        font-size: rem(21,$text-bp-lg);
+        font-size: rem(19,$text-bp-lg);
+        line-height: rem(30,$text-bp-lg);
+        padding: rem(10,$text-bp-lg);
+    }
+
+}
+.pageLink {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    font-size: rem(21,$text-bp-sm);
+    line-height: rem(30,$text-bp-sm);
+    padding: rem(30,$text-bp-sm);
+
+    @include bp-medium {
+        font-size: rem(21,$text-bp-md);
+        line-height: rem(30,$text-bp-md);
+        padding: rem(30,$text-bp-md);
+    }
+
+    @include bp-large {
+        font-size: rem(19,$text-bp-lg);
+        line-height: rem(30,$text-bp-lg);
+        padding: rem(10,$text-bp-lg);
+    }
+
+}
+.pageBody {
+    display: inline-block;
+    color: #000;
+    
+    font-size: rem(21,$text-bp-sm);
+    line-height: rem(30,$text-bp-sm);
+    padding: rem(30,$text-bp-sm);
+
+    @include bp-medium {
+        font-size: rem(21,$text-bp-md);
+        line-height: rem(30,$text-bp-md);
+        padding: rem(30,$text-bp-md);
+    }
+
+    @include bp-large {
+        font-size: rem(19,$text-bp-lg);
         line-height: rem(30,$text-bp-lg);
         padding: rem(30,$text-bp-lg);
     } 
@@ -32,19 +110,18 @@
 
 
 
-.pageSecTitle {
-    clear:left;
+.pageSecTitle, .pageSecTitleLink{
     font-family: 'Ultra', serif;
-    color: #fff;
-    background-color: #000;
     text-align: center;
-
+    width: 100%;
     font-size: rem(60,$text-bp-sm);
     padding: rem(20,$text-bp-sm);
+    letter-spacing: rem(2,$text-bp-sm);
 
      @include bp-medium {
-        font-size: rem(48,$text-bp-md);
-        padding: rem(20,$text-bp-md);
+        font-size: rem(38,$text-bp-md);
+        padding: rem(16,$text-bp-md);
+        letter-spacing: rem(2,$text-bp-md);
       }
 
     @include bp-large {
@@ -52,6 +129,33 @@
         padding: rem(20,$text-bp-lg);
         letter-spacing: rem(2,$text-bp-lg);
     }
+
+    
+}
+
+.pageSecTitle {
+    color: #fff;
+    background-color: #000;
+}
+
+.pageSecTitleLink {
+    background-color: #000;
+    transition:all 0.3s;
+}
+
+
+.pageSecTitleLink:hover {
+    background-color: #fff;
+}
+
+.pageSecTitleLink a {
+    color: #fff;
+    transition:all 0.3s;
+}
+
+
+.pageSecTitleLink a:hover {
+    color: #000;
 }
 
 .pageRow {
@@ -104,7 +208,7 @@
 
     @include bp-medium {
         text-align: left;
-        width:rem(317.5,$text-bp-md);
+        width:rem(635,$text-bp-md);
     }
 
     @include bp-large {
@@ -174,9 +278,9 @@
     padding: rem(20,$text-bp-sm);
 
      @include bp-medium {
-        font-size: rem(21,$text-bp-md);
-        line-height: rem(24,$text-bp-md);
-        padding: rem(20,$text-bp-md);
+        font-size: rem(17,$text-bp-md);
+        line-height: rem(19,$text-bp-md);
+        padding: rem(16,$text-bp-md);
       }
 
     @include bp-large {
@@ -193,9 +297,9 @@
     padding-top: rem(10,$text-bp-sm);
 
      @include bp-medium {
-        font-size: rem(21,$text-bp-md);
-        line-height: rem(24,$text-bp-md);
-        padding-top: rem(10,$text-bp-md);
+        font-size: rem(13,$text-bp-md);
+        line-height: rem(19,$text-bp-md);
+        padding-top: rem(8,$text-bp-md);
       }
 
     @include bp-large {
@@ -213,9 +317,9 @@
     padding: rem(20,$text-bp-sm);
 
      @include bp-medium {
-        font-size: rem(16,$text-bp-md);
-        line-height: rem(28,$text-bp-md);
-        padding: rem(20,$text-bp-md);
+        font-size: rem(13,$text-bp-md);
+        line-height: rem(22,$text-bp-md);
+        padding: rem(16,$text-bp-md);
       }
 
     @include bp-large {
@@ -239,7 +343,6 @@
 }
 
 .postContent {
-    background-color: #333;
     display: none;
     opacity: 0;
     position: fixed;
@@ -252,26 +355,114 @@
     overflow-y:auto;
 }
 
-.postClose {
-    cursor: pointer;
+.postImg {
+
+    position: absolute;
+    vertical-align: middle;
+    text-align: center;
+
+    width: rem(750,$text-bp-sm);
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    
+
+    @include bp-medium {
+        width: rem(1270,$text-bp-md);
+    }
+
+    @include bp-large {
+        width: rem(1600,$text-bp-lg);
+
+    }
+}
+
+
+
+.rightArrow, .leftArrow, .postClose{
     color: #fff;
-    font-family: 'Khula', sans-serif;
-    font-weight: 800;
+    opacity: .4;
+    cursor: pointer;
+    position: fixed;
+   
+    font-size: rem(50,$text-bp-sm);
+    @include bp-medium {
+        font-size: rem(50,$text-bp-md);
+    }
+
+    @include bp-large {
+        font-size: rem(60,$text-bp-lg);
+    }
+    transition:all 0.3s;
+}
+
+.rightArrow:hover, .leftArrow:hover, .postClose:hover {
+    opacity: .8;
+}
+
+.rightArrow {
+    display: none;
+    bottom: rem(30,$text-bp-sm);
+    right: rem(200,$text-bp-sm);
+
+    @include bp-medium {
+        display: block;
+        bottom: 50%;
+        right: rem(30,$text-bp-md);
+    }
+
+    @include bp-large {
+        display: block;
+        bottom: 50%;
+        right: rem(30,$text-bp-lg);
+    }
+
+}
+.leftArrow {
+    display: none;
+    bottom: rem(30,$text-bp-sm);
+    left: rem(200,$text-bp-sm);
+    
+    @include bp-medium {
+        display: block;
+        bottom: 50%;
+        left: rem(30,$text-bp-md);
+    }
+
+    @include bp-large {
+        display: block;
+        bottom: 50%;
+        left: rem(30,$text-bp-lg);
+    }
+}
+
+.postClose {
+
     top: rem(30,$text-bp-sm);
     right: rem(30,$text-bp-sm);
-    font-size: rem(80,$text-bp-sm);
-    position: absolute;
 
     @include bp-medium {
         top: rem(30,$text-bp-md);
         right: rem(30,$text-bp-md);
-        font-size: rem(50,$text-bp-md);
     }
 
     @include bp-large {
         
         top: rem(30,$text-bp-lg);
         right: rem(30,$text-bp-lg);
-        font-size: rem(50,$text-bp-lg);
     }
+
+    transition:all 0.3s;
+}
+
+.pageShare {
+    margin: rem(15,$text-bp-sm) 0;
+
+    @include bp-medium {
+        margin: rem(15,$text-bp-md) 0;
+    }
+
+    @include bp-large {
+        margin: rem(15,$text-bp-lg) 0;
+    } 
 }
