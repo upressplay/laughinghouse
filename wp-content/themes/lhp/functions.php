@@ -96,4 +96,6 @@ function remove_admin_login_header() {
 	remove_action('wp_head', '_admin_bar_bump_cb');
 }
 
-
+function empty_content($str) {
+    return trim(str_replace('&nbsp;','',strip_tags($str,'<img>'))) == '';
+}

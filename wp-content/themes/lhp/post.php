@@ -11,7 +11,8 @@
 							$playlist = get_field('youtube_playlist');
 
 							$thumb = get_the_post_thumbnail_url( $post->ID, $thumb_size );
-							$img = get_the_post_thumbnail_url( $post->ID );
+							//$img = get_the_post_thumbnail_url( $post->ID );
+							$img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "large" );
 
 							if($show_link) {
 								$output  .= '<a href="'. $link .'" data-postid="'.$post->ID.'" class="'.$cat .' post" >';	
@@ -46,10 +47,11 @@
 								$output  .= '</a>';	
 							}
 							
-							$output  .= '<div id="'.$post->ID.'" class="postContent" data-hires="'.$img.'" data-vidid="'.$vidid.'" data-playlist="'.$playlist.'" data-cat="'.$cat.'">';
+							$output  .= '<div id="'.$post->ID.'" class="postContent" data-hires="'.$img[0].'" data-hires-w="'.$img[1].'" data-hires-h="'.$img[2].'" data-vidid="'.$vidid.'" data-playlist="'.$playlist.'" data-cat="'.$cat.'">';
 							if($cat != "videos" && $cat != "gallery") {
 								$output  .=  '<div class="pageSecTitle"> '.$title.' </div>';
 								$output  .= '<div class="pageThumbDate">'. $date .'</div>';	
+
 								$output  .= '<div class="pageShare">';	
 								$output  .= '<div class="socialBtn share" data-type="facebook" data-title="'.$title.'" data-url="'.$link.'" data-desc="'. $summary .'">
 						                          <span class="fab fa-facebook-square" aria-hidden="true" ></span>

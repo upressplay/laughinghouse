@@ -1,14 +1,32 @@
-.headerImg {
+.headerImg, .postHeaderImg {
     display: block;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: auto 100%;
+
     width:rem(750,$text-bp-sm);
 
     @include bp-medium {
+        background-size: 100% auto;
         width:rem(1270,$text-bp-md);
     }
 
     @include bp-large {
+        background-size: 100% auto;
         width:rem(1600,$text-bp-lg);
     }
+}
+.headerImg {
+    height:rem(375,$text-bp-lg);
+
+    @include bp-medium {
+        height:rem(480,$text-bp-lg);
+    }
+
+    @include bp-large {
+        height:rem(600,$text-bp-lg);
+    }
+    
 }
 
 .pageHeader {
@@ -52,9 +70,11 @@
 }
 
 .pageLinks {
-    margin: rem(5,$text-bp-sm) rem(10,$text-bp-sm);
+
+    margin-bottom: rem(25,$text-bp-sm);
+
     @include bp-medium {
-        margin: rem(5,$text-bp-md) rem(10,$text-bp-md);
+        margin-bottom: rem(25,$text-bp-md);
     }
 
     @include bp-large {
@@ -137,41 +157,45 @@
 }
 
 .pageSecTitle {
+ 
+}
+
+.pageSecTitle {
     font-family: 'Ultra', serif;
     text-align: center;
-    color: #fff;
-    background-color: #000;
     text-transform: uppercase;
 
     width: 100%;
-    font-size: rem(60,$text-bp-sm);
-    padding: rem(20,$text-bp-sm);
+    font-size: rem(45,$text-bp-sm);
     letter-spacing: rem(2,$text-bp-sm);
+    padding: rem(20,$text-bp-sm) 0;
 
      @include bp-medium {
         font-size: rem(38,$text-bp-md);
-        padding: rem(16,$text-bp-md);
         letter-spacing: rem(2,$text-bp-md);
+        padding: rem(16,$text-bp-md);
       }
 
     @include bp-large {
         font-size: rem(48,$text-bp-lg);
-        padding: rem(20,$text-bp-lg);
         letter-spacing: rem(2,$text-bp-lg);
+        padding: rem(20,$text-bp-lg);
     }
+
 
     
 }
 
-.pageSecTitle a {
+.pageSecTitleLink a {
     display: block;
     color: #fff;
     background-color: #000;
+
     transition:all 0.3s;
 }
 
 
-.pageSecTitle a:hover {
+.pageSecTitleLink a:hover {
     color: #000;
     background-color: #fff;
 }
@@ -243,7 +267,7 @@
     width:rem(250,$text-bp-sm);
 
     @include bp-medium {
-        width:rem(160,$text-bp-md);
+        width:rem(157,$text-bp-md);
     }
 
     @include bp-large {
@@ -272,7 +296,7 @@
     display: inline-block;
     overflow: hidden;
     width:rem(750,$text-bp-sm);
-    height:rem(375,$text-bp-sm);
+    height:rem(750,$text-bp-sm);
 
     @include bp-medium {
         width:rem(317.5,$text-bp-md);
@@ -324,14 +348,14 @@
     color: #fff;
     background-color: #000;
 
-    font-size: rem(30,$text-bp-sm);
-    line-height: rem(48,$text-bp-sm);
-    padding: rem(20,$text-bp-sm);
+    font-size: rem(36,$text-bp-sm);
+    line-height: rem(40,$text-bp-sm);
+    padding: rem(30,$text-bp-sm) rem(50,$text-bp-sm);
 
      @include bp-medium {
         font-size: rem(17,$text-bp-md);
-        line-height: rem(19,$text-bp-md);
-        padding: rem(16,$text-bp-md);
+        line-height: rem(20,$text-bp-md);
+        padding: rem(8,$text-bp-md) rem(16,$text-bp-md);
       }
 
     @include bp-large {
@@ -363,20 +387,20 @@
     color: #fff;
     background-color: #000;
 
-    font-size: rem(30,$text-bp-sm);
-    line-height: rem(48,$text-bp-sm);
-    padding: rem(20,$text-bp-sm);
+    font-size: rem(24,$text-bp-sm);
+    line-height: rem(33,$text-bp-sm);
+    padding: 0 rem(40,$text-bp-sm) rem(40,$text-bp-sm) rem(40,$text-bp-sm);
 
      @include bp-medium {
         font-size: rem(13,$text-bp-md);
         line-height: rem(22,$text-bp-md);
-        padding: rem(16,$text-bp-md);
+        padding: 0 rem(16,$text-bp-md) rem(16,$text-bp-md) rem(16,$text-bp-md);
       }
 
     @include bp-large {
         font-size: rem(16,$text-bp-lg);
         line-height: rem(28,$text-bp-lg);
-        padding: rem(20,$text-bp-lg);
+        padding: 0 rem(20,$text-bp-lg) rem(20,$text-bp-lg) rem(20,$text-bp-lg);
     }
 }
 #postOverlay {
@@ -412,7 +436,7 @@
     vertical-align: middle;
     text-align: center;
 
-    width: rem(750,$text-bp-sm);
+    width: 90vw;
     top: 50%;
     left:50%;
     transform: translate(-50%, -50%);
@@ -423,8 +447,32 @@
     }
 
     @include bp-large {
-        width: rem(1600,$text-bp-lg);
 
+    }
+}
+
+.postImgTall {
+
+    position: absolute;
+    vertical-align: middle;
+    text-align: center;
+
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    height: 90vh;
+
+    @include bp-medium {
+        
+    }
+
+    @include bp-large {
+        
+
+    }
+    img {
+        width:auto;
+        height:100%;
     }
 }
 

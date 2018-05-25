@@ -157,14 +157,14 @@ a:active {
   width: 15rem;
   height: 15rem;
   left: 2rem;
-  top: 0rem;
+  top: -0.2rem;
   border: 0.2rem solid #000; }
   @media only screen and (min-width: 751px) {
     #navLogo {
       width: 13rem;
       height: 13rem;
       left: 3rem;
-      top: 0rem;
+      top: -0.2rem;
       border: 0.2rem solid #000; } }
   @media only screen and (min-width: 1271px) {
     #navLogo {
@@ -281,9 +281,9 @@ a:active {
   width: 100vw; }
   @media only screen and (min-width: 751px) {
     .navBtn {
-      font-size: 2.4rem;
+      font-size: 1.9rem;
       letter-spacing: 0.1rem;
-      padding: 2rem;
+      padding: 1.6rem;
       width: auto; } }
   @media only screen and (min-width: 1271px) {
     .navBtn {
@@ -307,22 +307,36 @@ a:active {
   padding: 0 2.5rem; }
   @media only screen and (min-width: 751px) {
     .socialBtn {
-      font-size: 2.7rem;
-      padding: 2rem 1rem; } }
+      font-size: 2.2rem;
+      padding: 1.6rem 0.8rem; } }
   @media only screen and (min-width: 1271px) {
     .socialBtn {
       font-size: 2.7rem;
       padding: 2rem 1rem; } }
 
-.headerImg {
+.headerImg, .postHeaderImg {
   display: block;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: auto 100%;
   width: 75rem; }
   @media only screen and (min-width: 751px) {
-    .headerImg {
+    .headerImg, .postHeaderImg {
+      background-size: 100% auto;
       width: 127rem; } }
   @media only screen and (min-width: 1271px) {
-    .headerImg {
+    .headerImg, .postHeaderImg {
+      background-size: 100% auto;
       width: 160rem; } }
+
+.headerImg {
+  height: 37.5rem; }
+  @media only screen and (min-width: 751px) {
+    .headerImg {
+      height: 48rem; } }
+  @media only screen and (min-width: 1271px) {
+    .headerImg {
+      height: 60rem; } }
 
 .pageHeader {
   display: inline-block;
@@ -350,10 +364,10 @@ a:active {
       margin: 3rem 5rem 1rem 5rem; } }
 
 .pageLinks {
-  margin: 0.5rem 1rem; }
+  margin-bottom: 2.5rem; }
   @media only screen and (min-width: 751px) {
     .pageLinks {
-      margin: 0.5rem 1rem; } }
+      margin-bottom: 2.5rem; } }
   @media only screen and (min-width: 1271px) {
     .pageLinks {
       margin-bottom: 2.5rem; } }
@@ -420,31 +434,29 @@ a:active {
 .pageSecTitle {
   font-family: 'Ultra', serif;
   text-align: center;
-  color: #fff;
-  background-color: #000;
   text-transform: uppercase;
   width: 100%;
-  font-size: 6rem;
-  padding: 2rem;
-  letter-spacing: 0.2rem; }
+  font-size: 4.5rem;
+  letter-spacing: 0.2rem;
+  padding: 2rem 0; }
   @media only screen and (min-width: 751px) {
     .pageSecTitle {
       font-size: 3.8rem;
-      padding: 1.6rem;
-      letter-spacing: 0.2rem; } }
+      letter-spacing: 0.2rem;
+      padding: 1.6rem; } }
   @media only screen and (min-width: 1271px) {
     .pageSecTitle {
       font-size: 4.8rem;
-      padding: 2rem;
-      letter-spacing: 0.2rem; } }
+      letter-spacing: 0.2rem;
+      padding: 2rem; } }
 
-.pageSecTitle a {
+.pageSecTitleLink a {
   display: block;
   color: #fff;
   background-color: #000;
   transition: all 0.3s; }
 
-.pageSecTitle a:hover {
+.pageSecTitleLink a:hover {
   color: #000;
   background-color: #fff; }
 
@@ -501,7 +513,7 @@ a:active {
   width: 25rem; }
   @media only screen and (min-width: 751px) {
     .pageThumbSm {
-      width: 16rem; } }
+      width: 15.7rem; } }
   @media only screen and (min-width: 1271px) {
     .pageThumbSm {
       width: 20rem; } }
@@ -524,7 +536,7 @@ a:active {
   display: inline-block;
   overflow: hidden;
   width: 75rem;
-  height: 37.5rem; }
+  height: 75rem; }
   @media only screen and (min-width: 751px) {
     .pageThumbSq {
       width: 31.75rem;
@@ -566,14 +578,14 @@ a:active {
   font-family: 'Ultra', serif;
   color: #fff;
   background-color: #000;
-  font-size: 3rem;
-  line-height: 4.8rem;
-  padding: 2rem; }
+  font-size: 3.6rem;
+  line-height: 4rem;
+  padding: 3rem 5rem; }
   @media only screen and (min-width: 751px) {
     .pageThumbTitle {
       font-size: 1.7rem;
-      line-height: 1.9rem;
-      padding: 1.6rem; } }
+      line-height: 2rem;
+      padding: 0.8rem 1.6rem; } }
   @media only screen and (min-width: 1271px) {
     .pageThumbTitle {
       font-size: 2.1rem;
@@ -600,19 +612,19 @@ a:active {
 .pageThumbBody, .postBody {
   color: #fff;
   background-color: #000;
-  font-size: 3rem;
-  line-height: 4.8rem;
-  padding: 2rem; }
+  font-size: 2.4rem;
+  line-height: 3.3rem;
+  padding: 0 4rem 4rem 4rem; }
   @media only screen and (min-width: 751px) {
     .pageThumbBody, .postBody {
       font-size: 1.3rem;
       line-height: 2.2rem;
-      padding: 1.6rem; } }
+      padding: 0 1.6rem 1.6rem 1.6rem; } }
   @media only screen and (min-width: 1271px) {
     .pageThumbBody, .postBody {
       font-size: 1.6rem;
       line-height: 2.8rem;
-      padding: 2rem; } }
+      padding: 0 2rem 2rem 2rem; } }
 
 #postOverlay {
   background-color: #000;
@@ -643,16 +655,25 @@ a:active {
   position: absolute;
   vertical-align: middle;
   text-align: center;
-  width: 75rem;
+  width: 90vw;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); }
   @media only screen and (min-width: 751px) {
     .postImg {
       width: 127rem; } }
-  @media only screen and (min-width: 1271px) {
-    .postImg {
-      width: 160rem; } }
+
+.postImgTall {
+  position: absolute;
+  vertical-align: middle;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 90vh; }
+  .postImgTall img {
+    width: auto;
+    height: 100%; }
 
 .rightArrow, .leftArrow, .postClose {
   color: #fff;

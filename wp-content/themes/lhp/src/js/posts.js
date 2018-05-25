@@ -122,6 +122,11 @@
 		var cat = post.attr('data-cat');
 
 		var img = $('#'+id).attr('data-hires');
+		var imgW = $('#'+id).attr('data-hires-w');
+		var imgH = $('#'+id).attr('data-hires-h');
+		var imgRatio = imgW/imgH;
+		trace.log('imgRatio = '+imgRatio);
+
 		var vidid = post.attr('data-vidid');
 		var playlist = post.attr('data-playlist');
 
@@ -147,8 +152,13 @@
             site.posts.openPost(this.id);
 
         }; 
-        var imgClass = "headerImg";
-        if(cat == "gallery") imgClass = "postImg";
+        var imgClass = "postHeaderImg";
+        if(cat == "gallery") {
+        	imgClass = "postImg";
+        	if(imgRatio<1) imgClass = "postImgTall";
+        }
+
+
         post.prepend('<div class="'+imgClass+'"><img src="'+img+'"></div>');
 
         new_content.src = img;
@@ -187,6 +197,7 @@
 		trace.log("hidePost"); 
 		currentPost.find('.videoPlayerHolder').remove();
 		currentPost.find('.headerImg').remove();
+		currentPost.find('.postHeaderImg').remove();
 		currentPost.find('.postImg').remove();
 		currentPost.css({"display":"none"}); 
 
