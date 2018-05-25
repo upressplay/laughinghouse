@@ -109,6 +109,7 @@ html {
 #siteHolder {
   width: 100vw;
   min-height: 100vh;
+  overflow-x: hidden;
   overflow-y: auto; }
 
 img {
@@ -482,6 +483,18 @@ a:active {
       text-align: left;
       width: 80rem; } }
 
+.pageThumbSm {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  width: 25rem; }
+  @media only screen and (min-width: 751px) {
+    .pageThumbSm {
+      width: 16rem; } }
+  @media only screen and (min-width: 1271px) {
+    .pageThumbSm {
+      width: 20rem; } }
+
 .pageThumbRect {
   display: inline-block;
   overflow: hidden;
@@ -509,6 +522,20 @@ a:active {
     .pageThumbSq {
       width: 40rem;
       height: 40rem; } }
+
+.pageThumbSqSm {
+  display: inline-block;
+  overflow: hidden;
+  width: 25rem;
+  height: 25rem; }
+  @media only screen and (min-width: 751px) {
+    .pageThumbSqSm {
+      width: 16rem;
+      height: 16rem; } }
+  @media only screen and (min-width: 1271px) {
+    .pageThumbSqSm {
+      width: 20rem;
+      height: 20rem; } }
 
 .pageThumbTall {
   display: inline-block;
@@ -677,13 +704,13 @@ a:active {
       right: 3rem; } }
 
 .pageShare {
-  margin: 1.5rem 0; }
+  margin: 0.5rem 0; }
   @media only screen and (min-width: 751px) {
     .pageShare {
-      margin: 1.5rem 0; } }
+      margin: 0.5rem 0; } }
   @media only screen and (min-width: 1271px) {
     .pageShare {
-      margin: 1.5rem 0; } }
+      margin: 0.5rem 0; } }
 
 .videos {
   cursor: pointer; }

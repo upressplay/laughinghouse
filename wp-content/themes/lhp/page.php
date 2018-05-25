@@ -22,11 +22,6 @@
 
 			$output  .=  '<div class="pageHeader">'; 
 			
-
-			
-
-			 
-
 		    if($page_poster != "" || have_rows('page_links') ) {
 		    	$output  .=  '<div class="pageInfoBody">'; 
 		    	$output  .=  get_the_content(); 
@@ -128,7 +123,7 @@
 
 				 if( is_page($cat_name)) {
 					global $post;
-					$args = array( 'category_name' => $cat_name );
+					$args = array( 'category_name' => $cat_name,  'numberposts' => 100, );
 					$output  .=  '<div class="pageRow">'; 
 					$category_posts = get_posts( $args );
 
@@ -148,9 +143,16 @@
 		       			}
 
 		       			if($cat_name == "Gallery") {
+		       				$thumb_size = 'pageThumbSqSm';
+		       				$thumb_layout = "Sm";
 		       				$show_title = false;
 		       				$show_date = false;
 		       				$show_summary = false;
+		       			}
+		       			if($cat_name == "Team") {
+		       				$show_date = false;
+		       				$thumb_size = 'pageThumbSq';
+		       				$thumb_layout = "Horz";	
 		       			}
 						include( locate_template( 'post.php', false, false ) ); 	
 

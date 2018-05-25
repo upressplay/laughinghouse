@@ -235,6 +235,22 @@
     }
 }
 
+.pageThumbSm {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+
+    width:rem(250,$text-bp-sm);
+
+    @include bp-medium {
+        width:rem(160,$text-bp-md);
+    }
+
+    @include bp-large {
+        width:rem(200,$text-bp-lg);
+    }
+}
+
 .pageThumbRect {
     display: inline-block;
     overflow: hidden;
@@ -266,6 +282,23 @@
     @include bp-large {
         width:rem(400,$text-bp-lg);
         height:rem(400,$text-bp-lg);
+    }
+}
+
+.pageThumbSqSm {
+    display: inline-block;
+    overflow: hidden;
+    width:rem(250,$text-bp-sm);
+    height:rem(250,$text-bp-sm);
+
+    @include bp-medium {
+        width:rem(160,$text-bp-md);
+        height:rem(160,$text-bp-md);
+    }
+
+    @include bp-large {
+        width:rem(200,$text-bp-lg);
+        height:rem(200,$text-bp-lg);
     }
 }
 
@@ -474,13 +507,13 @@
 }
 
 .pageShare {
-    margin: rem(15,$text-bp-sm) 0;
+    margin: rem(5,$text-bp-sm) 0;
 
     @include bp-medium {
-        margin: rem(15,$text-bp-md) 0;
+        margin: rem(5,$text-bp-md) 0;
     }
 
     @include bp-large {
-        margin: rem(15,$text-bp-lg) 0;
+        margin: rem(5,$text-bp-lg) 0;
     } 
 }
