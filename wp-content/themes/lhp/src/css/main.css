@@ -320,72 +320,85 @@ a:active {
       width: 160rem; } }
 
 .pageHeader {
+  display: inline-block;
   background-color: #fff;
   color: #000;
-  text-align: left; }
+  text-align: left;
+  width: 100%; }
 
 .pageInfo {
-  display: inline-block; }
-  @media only screen and (min-width: 1271px) {
-    .pageInfo {
-      width: 10rem; } }
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center; }
 
 @media only screen and (min-width: 1271px) {
   .pagePoster {
-    width: 10rem; } }
+    width: 15rem;
+    margin: 3rem 3rem 1rem 3rem; } }
 
-.pageLink {
+.pageLinks {
+  margin: 0.5rem 1rem; }
+  @media only screen and (min-width: 751px) {
+    .pageLinks {
+      margin: 0.5rem 1rem; } }
+  @media only screen and (min-width: 1271px) {
+    .pageLinks {
+      margin-bottom: 2.5rem; } }
+
+.pageLinks a {
+  display: inline-block;
+  font-family: 'Ultra', serif;
   background-color: #000;
   color: #fff;
   text-align: center;
   font-size: 2.1rem;
   line-height: 3rem;
-  padding: 3rem; }
+  padding: 3rem;
+  transition: all 0.3s; }
   @media only screen and (min-width: 751px) {
-    .pageLink {
+    .pageLinks a {
       font-size: 2.1rem;
       line-height: 3rem;
       padding: 3rem; } }
   @media only screen and (min-width: 1271px) {
-    .pageLink {
-      font-size: 1.9rem;
-      line-height: 3rem;
-      padding: 1rem; } }
+    .pageLinks a {
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+      padding: 1rem;
+      margin: 0.5rem 1rem;
+      width: 13rem; } }
 
-.pageLink {
-  background-color: #000;
-  color: #fff;
-  text-align: center;
+.pageLinks a:hover {
+  background-color: #fff;
+  color: #000; }
+
+.pageBody, .pageInfoBody {
+  color: #000;
+  background-color: #fff;
   font-size: 2.1rem;
   line-height: 3rem;
   padding: 3rem; }
   @media only screen and (min-width: 751px) {
-    .pageLink {
+    .pageBody, .pageInfoBody {
       font-size: 2.1rem;
       line-height: 3rem;
       padding: 3rem; } }
   @media only screen and (min-width: 1271px) {
-    .pageLink {
+    .pageBody, .pageInfoBody {
       font-size: 1.9rem;
       line-height: 3rem;
-      padding: 1rem; } }
+      padding: 5rem; } }
 
 .pageBody {
-  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
   color: #000;
-  font-size: 2.1rem;
-  line-height: 3rem;
-  padding: 3rem; }
-  @media only screen and (min-width: 751px) {
-    .pageBody {
-      font-size: 2.1rem;
-      line-height: 3rem;
-      padding: 3rem; } }
-  @media only screen and (min-width: 1271px) {
-    .pageBody {
-      font-size: 1.9rem;
-      line-height: 3rem;
-      padding: 3rem; } }
+  background-color: #fff; }
+
+.pageInfoBody {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center; }
 
 .pageSecTitle, .pageSecTitleLink {
   font-family: 'Ultra', serif;

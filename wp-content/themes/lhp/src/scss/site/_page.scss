@@ -12,10 +12,11 @@
 }
 
 .pageHeader {
+    display: inline-block;
     background-color: #fff;
     color: #000;
     text-align: left;
-
+    width:100%;
      @include bp-medium {
         
       }
@@ -26,10 +27,10 @@
 }
 
 .pageInfo {
-    display: inline-block;
-
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
     @include bp-large {
-        width: rem(100,$text-bp-lg);
     }
 }
 
@@ -40,56 +41,61 @@
     }
 
     @include bp-large {
-        width: rem(100,$text-bp-lg);
+        width: rem(150,$text-bp-lg);
+        margin: rem(30,$text-bp-lg) rem(30,$text-bp-lg) rem(10,$text-bp-lg) rem(30,$text-bp-lg);
     } 
 
 }
 
-.pageLink {
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    font-size: rem(21,$text-bp-sm);
-    line-height: rem(30,$text-bp-sm);
-    padding: rem(30,$text-bp-sm);
-
+.pageLinks {
+    margin: rem(5,$text-bp-sm) rem(10,$text-bp-sm);
     @include bp-medium {
-        font-size: rem(21,$text-bp-md);
-        line-height: rem(30,$text-bp-md);
-        padding: rem(30,$text-bp-md);
+        margin: rem(5,$text-bp-md) rem(10,$text-bp-md);
     }
 
     @include bp-large {
-        font-size: rem(19,$text-bp-lg);
-        line-height: rem(30,$text-bp-lg);
-        padding: rem(10,$text-bp-lg);
+        margin-bottom: rem(25,$text-bp-lg);
     }
-
 }
-.pageLink {
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    font-size: rem(21,$text-bp-sm);
-    line-height: rem(30,$text-bp-sm);
-    padding: rem(30,$text-bp-sm);
 
-    @include bp-medium {
-        font-size: rem(21,$text-bp-md);
-        line-height: rem(30,$text-bp-md);
-        padding: rem(30,$text-bp-md);
-    }
-
-    @include bp-large {
-        font-size: rem(19,$text-bp-lg);
-        line-height: rem(30,$text-bp-lg);
-        padding: rem(10,$text-bp-lg);
-    }
-
-}
-.pageBody {
+.pageLinks a {
     display: inline-block;
+    font-family: 'Ultra', serif;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    font-size: rem(21,$text-bp-sm);
+    line-height: rem(30,$text-bp-sm);
+    padding: rem(30,$text-bp-sm);
+
+    @include bp-medium {
+        font-size: rem(21,$text-bp-md);
+        line-height: rem(30,$text-bp-md);
+        padding: rem(30,$text-bp-md);
+    }
+
+    @include bp-large {
+        font-size: rem(14,$text-bp-lg);
+        line-height: rem(18,$text-bp-lg);
+        padding: rem(10,$text-bp-lg);
+        margin: rem(5,$text-bp-lg) rem(10,$text-bp-lg);
+        width: rem(130,$text-bp-lg);
+    }
+    transition:all 0.3s;
+
+}
+
+
+.pageLinks a:hover {
+    background-color: #fff;
     color: #000;
+}
+
+
+.pageBody, .pageInfoBody {
+    
+    color: #000;
+    background-color: #fff;
     
     font-size: rem(21,$text-bp-sm);
     line-height: rem(30,$text-bp-sm);
@@ -104,11 +110,23 @@
     @include bp-large {
         font-size: rem(19,$text-bp-lg);
         line-height: rem(30,$text-bp-lg);
-        padding: rem(30,$text-bp-lg);
+        padding: rem(50,$text-bp-lg);
     } 
 }
 
+.pageBody {
+    vertical-align: middle;
+    text-align: center;
+    color: #000;
+    background-color: #fff;
+    
+}
 
+.pageInfoBody {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
 
 .pageSecTitle, .pageSecTitleLink{
     font-family: 'Ultra', serif;

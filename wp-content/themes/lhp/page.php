@@ -10,40 +10,54 @@
 			$output = ""; 
 			$output  .=  '<div class="headerImg">'; 
 			if ( has_post_thumbnail() ) {
-				$output  .=  '<img src="'.  get_the_post_thumbnail_url() .'"/>'; 
+				$output  .=  '<img src="'.  get_the_post_thumbnail_url() .'" alt="'.get_the_title().'"/>'; 
 			}
 			$output  .=  '</div>'; 
 			if(!is_front_page()){
 				$output  .=  '<h1 class="pageSecTitle"> '.get_the_title().' </h1>';	
 			}
 
-			$output  .=  '<div class="pageHeader">'; 
-			$output  .=  '<div class="pageInfo">'; 
-
 			$section_link = get_sub_field('section_page');
 			$page_poster = get_field('page_poster');
 
-			if($page_poster != "") {
-				$output  .= '<div class="pagePoster">'; 
-				$output  .= '<img src="'.$page_poster['sizes']['medium'].'">';
-				$output  .= '</div>'; 	
-			}
-			if( have_rows('page_links') ) {		
-				$output  .=  '<div class="pageLink">';  
-		    	while( have_rows('page_links') ) {
+			$output  .=  '<div class="pageHeader">'; 
+			
 
-		    		the_row(); 
-		    		$output  .=  '<a href="'.get_sub_field('page_link').'">'; 
-		    		$output  .=  '<a href="'.get_sub_field('page_link').'">'; 
-					$output  .=  get_sub_field('page_link_txt');
-					$output  .=  '</a>'; 
-		    	}
-		    	$output  .=  '</div>'; 
+			
+
+			 
+
+		    if($page_poster != "" || have_rows('page_links') ) {
+		    	$output  .=  '<div class="pageInfoBody">'; 
+		    	$output  .=  get_the_content(); 
+		    	$output  .=  '</div><!-- pageInfoBody -->';
+
+		    	$output  .=  '<div class="pageInfo">'; 
+				if($page_poster != "") {
+					$output  .= '<div class="pagePoster">'; 
+					$output  .= '<img src="'.$page_poster['sizes']['medium'].'">';
+					$output  .= '</div>'; 	
+				}
+				if( have_rows('page_links') ) {		
+					$output  .=  '<div class="pageLinks">';  
+			    	while( have_rows('page_links') ) {
+
+			    		the_row(); 
+			    		$output  .=  '<a href="'.get_sub_field('page_link').'" target="_blank" class="pageLink">'; 
+						$output  .=  get_sub_field('page_link_txt');
+						$output  .=  '</a>'; 
+			    	}
+			    	$output  .=  '</div>'; 
+			    }
+			    $output  .=  '</div><!-- pageInfo -->';
+
+		    } else {
+		    	$output  .=  '<div class="pageBody">'; 
+		    	$output  .=  get_the_content(); 
+		    	$output  .=  '</div><!-- pageBody -->';
 		    }
-		    $output  .=  '</div><!-- pageInfo -->'; 
-		    $output  .=  '<div class="pageBody">'; 
-		    $output  .=  get_the_content(); 
-		    $output  .=  '</div><!-- pageBody -->'; 
+			 
+		   
 			$output  .=  '</div><!-- pageHeader -->'; 
 
 			
